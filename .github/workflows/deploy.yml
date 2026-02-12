@@ -12,14 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASS }}
-          port: ${{ secrets.SFTP_PORT }}
-          server-dir: ./lemuria.studio-ohp9/public_html/ai/
-          exclude: |
-            **/.git*
-            **/.git*/**
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+      
+      - name: Deploy via lftp
+        env:
+          FTP_HOST: ${{ secrets.SFTP_HOST }}
+          FTP_USER: ${{ secrets.SFTP_USER }}
+          FTP_PASS: ${{ secrets.SFTP_PASS }}
+          FTP_PORT: ${{ secrets.SFTP_PORT }}
+        run: |
+          lftp -e "set ftp:ssl-allow no; set net:timeout 10; set net:max-retries 3; set net:reconnect-interval-base 5; mirror -R --delete --verbose --exclude .git/ --exclude .github/ ./ /lemuria.studio-ohp9/public_html/ai/; bye" -u $FTP_USER,$FTP_PASS ftp://$FTP_HOST:$FTP_PORT
