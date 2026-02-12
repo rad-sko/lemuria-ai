@@ -52,3 +52,5 @@ Wszystko działa bez instalacji; wystarczy hosting plików statycznych.
 ## Licencja
 
 Zawartość i kod należą do Lemuria sp. z o.o.
+
+# lemuria-ai
