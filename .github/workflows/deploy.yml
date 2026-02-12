@@ -1,0 +1,21 @@
+name: Deploy do lemuria.studio/ai
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: FTP Deploy
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASS }}
+          local_dir: './'
+          remote_dir: ${{ secrets.SFTP_TARGET }}
+          delete: false
