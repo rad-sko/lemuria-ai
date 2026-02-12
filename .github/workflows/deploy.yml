@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
           port: ${{ secrets.SFTP_PORT }}
-          server-dir: ./lemuria.studio/public_html/ai/
+          server-dir: ./lemuria.studio-ohp9/public_html/ai/
           exclude: |
             **/.git*
             **/.git*/**
