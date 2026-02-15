@@ -67,20 +67,59 @@
     </div>
   </section>
 
-  <section class="md:py-32 border-white/5 border-b pt-24 pb-24 [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate" id="vision">
-    <div class="max-w-7xl mx-auto px-6">
+  <section class="md:py-32 py-24 overflow-hidden bg-[#050505] border-white/5 border-b relative" id="vision-section">
+  
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <img src="img/kot_oczy.jpg" 
+           alt="Vision Background" 
+           id="vision-parallax-img"
+           class="absolute -top-[10%] left-0 w-full h-[120%] object-cover opacity-60 brightness-90 will-change-transform">
+      
+      <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
+      <div class="absolute inset-0 bg-black/30"></div>
+    </div>
+  
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-12 md:gap-24 gap-x-12 gap-y-12">
         <div class="md:col-span-5">
-          <h2 class="md:text-4xl sticky text-3xl font-medium text-white tracking-tight top-32 font-poppins">AI w Lemurii to narzędzie. Nie produkt.</h2>
+          <h2 class="md:text-4xl sticky text-3xl font-medium text-white tracking-tight top-32 font-poppins drop-shadow-2xl">
+            AI w Lemurii to narzędzie. Nie produkt.
+          </h2>
         </div>
         <div class="md:col-span-7 space-y-8">
-          <p class="leading-relaxed md:text-2xl text-xl font-light text-neutral-200 font-poppins">
+          <p class="leading-relaxed md:text-2xl text-xl font-light text-neutral-100 font-poppins drop-shadow-lg">
             Znamy język obrazu, pracę kamery, optykę, oświetlenie, rytm montażu i realia planu zdjęciowego. To doświadczenie pozwala nam prowadzić generatywną AI reżysersko – projektując ujęcia i sceny z intencją, zamiast polegać na losowych rezultatach generowania.
           </p>
         </div>
       </div>
     </div>
   </section>
+  
+  <script>
+    (function() {
+      const parallaxImg = document.getElementById('vision-parallax-img');
+      const section = document.getElementById('vision-section');
+  
+      function updateParallax() {
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+  
+        // Sprawdzamy czy sekcja jest widoczna
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          // Obliczamy postęp przewijania sekcji (od 0 do 1)
+          const scrollPercent = (windowHeight - rect.top) / (windowHeight + rect.height);
+          // Przesuwamy obrazek w zakresie od -5% do 5% jego wysokości
+          const yPos = (scrollPercent - 0.5) * 15; 
+          
+          parallaxImg.style.transform = `translate3d(0, ${yPos}%, 0)`;
+        }
+      }
+  
+      window.addEventListener('scroll', updateParallax, { passive: true });
+      // Wywołaj raz na starcie, żeby ustawić pozycję
+      updateParallax();
+    })();
+  </script>
 
   <section class="overflow-hidden border-white/5 border-b pt-24 pb-24 relative" id="target-audience">
     <div class="z-10 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
