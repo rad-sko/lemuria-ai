@@ -72,27 +72,91 @@ body {
   100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
 }
 
-.border-gradient { position: relative; }
-
-.border-gradient::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  background: linear-gradient(225deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-}
-
 .animate-on-scroll { animation-play-state: paused !important; }
 .animate-on-scroll.animate { animation-play-state: running !important; }
 
+
+/* ========== FLUXORA CARD: FIXED SEAMLESS LOOP ========== */
+
 .fluxora-card {
-  background: linear-gradient(225deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
+  border-radius: 24px;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 1. Statyczna ramka (Spoczynek - szara) */
+.fluxora-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  
+  /* Kolor ramki w spoczynku */
+  background: rgba(255, 255, 255, 0.1);
+  
+  /* Maskowanie środka */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 1; /* Domyślnie widoczna */
+}
+
+/* 2. Animowana ramka (Hover - Kolorowa) */
+.fluxora-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px; /* Ramka minimalnie szersza */
+  border-radius: 24px;
+  padding: 2px; /* Grubość świecącej ramki */
+  
+  /* DOUBLE SEQUENCE: Fiolet -> Róż -> Indygo | Fiolet -> Róż -> Indygo */
+  /* Dzięki temu koniec gradientu idealnie łączy się z początkiem przy przesuwaniu */
+  background: linear-gradient(90deg, 
+    #7c3aed, #db2777, #4f46e5, 
+    #7c3aed, #db2777, #4f46e5
+  );
+  
+  /* Rozmiar 200% szerokości kontenera */
+  background-size: 200% 100%;
+  
+  /* Maskowanie środka */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  
+  opacity: 0; /* Domyślnie ukryta */
+  transition: opacity 0.3s ease;
+  
+  /* Animacja przesuwania */
+  animation: shimmy 3s linear infinite;
+}
+
+/* 3. Interakcja HOVER */
+.fluxora-card:hover {
+  transform: translateY(-2px);
+  /* Mocny Glow w kolorze fioletowym */
+  box-shadow: 0 0 50px -10px rgba(124, 58, 237, 0.5);
+}
+
+.fluxora-card:hover::before {
+  opacity: 1; /* Pokaż kolorową ramkę */
+}
+
+.fluxora-card:hover::after {
+  opacity: 0; /* Ukryj szarą ramkę */
+}
+
+/* Idealna pętla przy background-size: 200% */
+@keyframes shimmy {
+  0% { background-position: 0% 0; }
+  100% { background-position: -200% 0; }
 }
 
 /* Word reveal */
@@ -126,12 +190,11 @@ body {
   animation-play-state: paused;
 }
 
-/* Subtelny, filmowy cień - zadziała na biały tekst i gradient */
+/* Subtelny, filmowy cień */
 .hero-glow {
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
-/* Jeszcze lżejszy cień pod paragraf, żeby tekst nie był "brudny" */
 .soft-glow {
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
 }
