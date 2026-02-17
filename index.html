@@ -10,6 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 <body class="antialiased overflow-x-hidden relative">
@@ -314,38 +326,38 @@
           <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
             <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 01</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:document-text-linear" width="40" class="text-white/80"></iconify-icon></div>
-            <h3 class="text-xl font-medium text-white mb-2">Brief i Cele</h3>
-            <p class="text-sm font-light text-neutral-300">Analizujemy Twoje potrzeby, grupę docelową i kanały dystrybucji.</p>
+            <h3 class="text-xl font-medium text-white mb-2 font-poppins">Brief i Cele</h3>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Analizujemy Twoje potrzeby, grupę docelową i kanały dystrybucji.</p>
           </div>
           <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
             <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 02</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:pen-new-square-linear" width="40" class="text-white/80"></iconify-icon></div>
-            <h3 class="text-xl font-medium text-white mb-2">Scenariusz</h3>
-            <p class="text-sm font-light text-neutral-300">Tworzymy koncept kreatywny i scenariusz filmowy.</p>
+            <h3 class="text-xl font-medium text-white mb-2 font-poppins">Scenariusz</h3>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Tworzymy koncept kreatywny i scenariusz filmowy.</p>
           </div>
           <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
             <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 03</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:gallery-wide-linear" width="40" class="text-white/80"></iconify-icon></div>
-            <h3 class="text-xl font-medium text-white mb-2">Storyboard</h3>
-            <p class="text-sm font-light text-neutral-300">Precyzyjny plan ujęć przed startem produkcji.</p>
+            <h3 class="text-xl font-medium text-white mb-2 font-poppins">Storyboard</h3>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Precyzyjny plan ujęć przed startem produkcji.</p>
           </div>
           <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
             <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 04</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:videocamera-record-linear" width="40" class="text-white/80"></iconify-icon></div>
-            <h3 class="text-xl font-medium text-white mb-2">Reżyseria Scen</h3>
-            <p class="text-sm font-light text-neutral-300">Generowanie i postprodukcja ujęć reżyserowana przez nas.</p>
+            <h3 class="text-xl font-medium text-white mb-2 font-poppins">Reżyseria Scen</h3>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Generowanie i postprodukcja ujęć reżyserowana przez nas.</p>
           </div>
           <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
             <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 05</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:clapperboard-play-linear" width="40" class="text-white/80"></iconify-icon></div>
-            <h3 class="text-xl font-medium text-white mb-2">AI Video Gen</h3>
-            <p class="text-sm font-light text-neutral-300">Profesjonalny montaż i filmowa korekcja barwna.</p>
+            <h3 class="text-xl font-medium text-white mb-2 font-poppins">AI Video Gen</h3>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Profesjonalny montaż i filmowa korekcja barwna.</p>
           </div>
           <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
             <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 06</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:music-note-slider-linear" width="40" class="text-white/80"></iconify-icon></div>
-            <h3 class="text-xl font-medium text-white mb-2">Udźwiękowienie</h3>
-            <p class="text-sm font-light text-neutral-300">Sound design, lektor i mix audio w standardzie premium.</p>
+            <h3 class="text-xl font-medium text-white mb-2 font-poppins">Udźwiękowienie</h3>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Sound design, lektor i mix audio w standardzie premium.</p>
           </div>
         </div>
       </div>
