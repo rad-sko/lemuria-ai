@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lemuria Content House | Wizja bez ograniczeń. Produkcja, która dowozi.</title>
-  <meta name="description" content="Lemuria Content House: Kinowa produkcja wideo z reżyserem Radosławem Skoniecznym. Wysokiej klasy filmy wspierane przez AI dla marek takich jak Adamed i T-Mobile. 10 lat doświadczenia, 100% niezawodności.">
+  <title>Lemuria Content House | Wizja bez ograniczeń. Realizacje, które poruszają.</title>
+  <meta name="description" content="Lemuria Content House: Wysokiej jakości produkcja materiałów wideo i animacji. Wysokiej klasy filmy wspierane przez AI dla marek takich jak Adamed i T-Mobile. 10 lat doświadczenia, 100% niezawodności.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
   <!-- ========== 1. NAV ========== -->
   <nav class="fixed z-40 bg-[#050505]/80 w-full border-white/5 border-b top-0 backdrop-blur-md">
     <div class="flex h-20 max-w-7xl mr-auto ml-auto pr-6 pl-6 items-center justify-between">
-      <a href="#" class="text-xl tracking-tighter text-white font-medium uppercase z-50">Lemuria</a>
+      <a href="https://lemuria.studio" class="text-xl tracking-tighter text-white font-medium uppercase z-50">Lemuria</a>
       <div class="flex gap-x-8 gap-y-8 items-center">
         <a href="#kim-jestesmy" class="hidden md:block hover:text-white transition-colors text-sm text-neutral-400">O nas</a>
         <a href="#uslugi" class="hidden md:block hover:text-white transition-colors text-sm text-neutral-400">Usługi</a>
@@ -47,27 +47,38 @@
   </nav>
 
   <!-- ========== 2. HERO ========== -->
-  <header class="flex overflow-hidden relative items-center justify-center min-h-[100dvh] h-auto pt-32 pb-20 md:py-0 md:min-h-screen">
-    <div class="z-0 absolute top-0 right-0 bottom-0 left-0">
-      <div class="absolute top-0 right-0 bottom-0 left-0 overflow-hidden">
-        <iframe src="https://player.vimeo.com/video/1165631667?h=14698123aa&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&autopause=0" class="pointer-events-none absolute top-0 right-0 bottom-0 left-0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position: absolute; top: 50%; left: 50%; width: 177.78vh; height: 100vh; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%);"></iframe>
-        <div class="z-10 bg-gradient-to-br from-[#050505]/50 via-[#050505]/80 to-[#050505] absolute top-0 right-0 bottom-0 left-0"></div>
-      </div>
+  <header class="flex overflow-hidden relative items-center justify-center min-h-[100dvh] h-auto pt-32 pb-20 md:py-0 md:min-h-screen bg-black">
+    <div class="z-0 absolute inset-0 overflow-hidden pointer-events-none">
+      <iframe src="https://player.vimeo.com/video/1165631667?h=14698123aa&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&autopause=0" 
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] h-[100vh] min-w-full min-height-full scale-[1.02]" 
+              frameborder="0" allow="autoplay; fullscreen" style="min-width: 100%; min-height: 100%;"></iframe>
+      
+      <div class="absolute inset-0 bg-black/30 z-10"></div>
+      
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_100%)] z-10 opacity-60"></div>
+      
+      <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#050505] to-transparent z-10"></div>
     </div>
-    <div class="text-center max-w-5xl z-10 mr-auto ml-auto pt-5 pr-6 pl-6 relative">
-      <h1 class="fade-in-up delay-100 leading-tight sm:text-4xl md:text-6xl lg:text-7xl [animation:fadeSlideIn_0.4s_ease-out_0.1s_both] animate-on-scroll animate text-3xl font-semibold text-white tracking-normal font-poppins mb-8 relative">
-        Wizja bez ograniczeń,<br><span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">Profesjonalnie</span>
+  
+    <div class="text-center max-w-5xl z-20 mx-auto px-6 relative">
+      <h1 class="hero-glow fade-in-up delay-100 leading-tight sm:text-4xl md:text-6xl lg:text-7xl animate-on-scroll text-3xl font-semibold text-white tracking-tight font-poppins mb-8">
+        Wizja bez ograniczeń.<br>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">Content, który porusza</span>
       </h1>
-      <p class="fade-in-up delay-200 leading-relaxed md:text-xl [animation:fadeSlideIn_0.4s_ease-out_0.15s_both] animate-on-scroll animate text-lg font-light text-neutral-400 tracking-wide font-poppins max-w-5xl mt-10 mr-auto ml-auto">
-        Łączymy <span class="font-medium text-white">dekadę doświadczenia reżyserskiego</span> z potęgą generatywnego AI. Tworzymy kampanie wideo dla największych marek — szybciej, odważniej i <span class="font-medium text-white">zawsze na czas.</span>
+  
+      <p class="soft-glow fade-in-up delay-200 leading-relaxed md:text-xl animate-on-scroll text-lg font-light text-white/90 tracking-wide font-poppins max-w-3xl mx-auto mt-10">
+        W Lemurii <span class="font-medium text-white">realizujemy filmy reklamowe i animacje, </span> łącząc klasyczne rzemiosło reżyserskie z narzędziami AI <span class="font-medium text-white">— szybciej, odważniej i zawsze na czas.</span>
       </p>
+  
       <div class="flex flex-col sm:flex-row mt-12 gap-4 items-center justify-center w-full">
-        <a href="#portfolio" class="fade-in-up delay-300 flex items-center gap-2 hover:bg-white hover:text-black transition-all group text-sm font-medium text-white bg-white/5 border-white/10 border rounded-full pt-3 pr-8 pb-3 pl-8">
+        <a href="#portfolio" class="fade-in-up delay-300 flex items-center gap-2 hover:bg-white hover:text-black transition-all group text-sm font-medium text-white bg-white/5 border-white/10 border rounded-full px-8 py-3 backdrop-blur-sm">
           <span>Zobacz nasze realizacje</span>
           <iconify-icon icon="solar:arrow-right-linear" width="16" class="transition-transform group-hover:translate-x-0.5"></iconify-icon>
         </a>
-        <a href="#contact" class="fade-in-up delay-[400ms] btn-premium text-sm font-medium rounded-full px-8 py-3 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-purple-400 to-purple-600 text-white">
-          <span class="flex items-center gap-2 z-10 relative">Brief w 24h</span>
+        
+        <a href="mailto:radek@lemuria.studio?subject=Cze%C5%9B%C4%87!%20Poznajmy%20si%C4%99%20(wizja%20projektu)&body=Cze%C5%9B%C4%87%20Radek%2C%0A%0AChcia%C5%82bym%20pogada%C4%87%20o%20nowym%20projekcie.%20Moja%20wizja%20to%3A%0A%0A(tutaj%20dopisz%20dwa%20s%C5%82owa%20o%20tym%2C%20co%20chcesz%20stworzy%C4%87)%0A%0APozdrawiam%2C" 
+           class="fade-in-up delay-[400ms] btn-premium text-sm font-medium rounded-full px-8 py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-xl shadow-purple-500/20 hover:scale-105 transition-transform inline-block">
+          <span class="flex items-center gap-2 z-10 relative">Poznajmy się</span>
         </a>
       </div>
     </div>
@@ -77,18 +88,28 @@
   <section class="py-16 md:py-24 bg-[#050505] border-white/5 border-b relative">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        
         <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 [animation:fadeSlideIn_0.4s_ease-out_0.05s_both] animate-on-scroll">
-          <span class="text-5xl md:text-6xl font-semibold text-white font-poppins">10+</span>
+          <div class="text-6xl md:text-7xl font-bold font-poppins bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
+            <span class="counter" data-target="10">0</span><span>+</span>
+          </div>
           <p class="mt-4 text-xs uppercase tracking-widest text-neutral-400 font-poppins font-medium">Lat doświadczenia filmowego</p>
         </div>
+  
         <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 [animation:fadeSlideIn_0.4s_ease-out_0.1s_both] animate-on-scroll">
-          <span class="text-5xl md:text-6xl font-semibold text-white font-poppins">200+</span>
+          <div class="text-6xl md:text-7xl font-bold font-poppins bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
+            <span class="counter" data-target="200">0</span><span>+</span>
+          </div>
           <p class="mt-4 text-xs uppercase tracking-widest text-neutral-400 font-poppins font-medium">Zrealizowanych projektów</p>
         </div>
+  
         <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 [animation:fadeSlideIn_0.4s_ease-out_0.15s_both] animate-on-scroll">
-          <span class="text-5xl md:text-6xl font-semibold text-white font-poppins">100%</span>
+          <div class="text-6xl md:text-7xl font-bold font-poppins bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
+            <span class="counter" data-target="100">0</span><span>%</span>
+          </div>
           <p class="mt-4 text-xs uppercase tracking-widest text-neutral-400 font-poppins font-medium">Terminowości (Safe Delivery)</p>
         </div>
+  
       </div>
     </div>
   </section>
@@ -571,7 +592,41 @@
       </div>
     </div>
   </div>
+  <script>
+    // Skrypt animujący odliczanie liczb
+    const runCounters = () => {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200; // Im niższa liczba, tym szybciej lecą cyfry
 
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = +counter.getAttribute('data-target');
+            
+            const updateCount = () => {
+              const count = +counter.innerText;
+              const inc = target / speed;
+
+              if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 15);
+              } else {
+                counter.innerText = target;
+              }
+            };
+
+            updateCount();
+            observer.unobserve(counter); // Animacja wykona się tylko raz
+          }
+        });
+      }, { threshold: 0.8 }); // Animacja ruszy, gdy 80% sekcji będzie widoczne
+
+      counters.forEach(counter => observer.observe(counter));
+    };
+
+    document.addEventListener('DOMContentLoaded', runCounters);
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
