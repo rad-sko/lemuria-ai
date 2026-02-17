@@ -15,18 +15,7 @@
       theme: {
         extend: {
           colors: {
-            background: 'hsl(var(--background) / <alpha-value>)',
-            foreground: 'hsl(var(--foreground) / <alpha-value>)',
-            card: { DEFAULT: 'hsl(var(--card) / <alpha-value>)', foreground: 'hsl(var(--card-foreground) / <alpha-value>)' },
-            popover: { DEFAULT: 'hsl(var(--popover) / <alpha-value>)', foreground: 'hsl(var(--popover-foreground) / <alpha-value>)' },
-            primary: { DEFAULT: 'hsl(var(--primary) / <alpha-value>)', foreground: 'hsl(var(--primary-foreground) / <alpha-value>)' },
-            secondary: { DEFAULT: 'hsl(var(--secondary) / <alpha-value>)', foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)' },
-            muted: { DEFAULT: 'hsl(var(--muted) / <alpha-value>)', foreground: 'hsl(var(--muted-foreground) / <alpha-value>)' },
-            accent: { DEFAULT: 'hsl(var(--accent) / <alpha-value>)', foreground: 'hsl(var(--accent-foreground) / <alpha-value>)' },
-            destructive: { DEFAULT: 'hsl(var(--destructive) / <alpha-value>)', foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)' },
-            border: 'hsl(var(--border) / <alpha-value>)',
-            input: 'hsl(var(--input) / <alpha-value>)',
-            ring: 'hsl(var(--ring) / <alpha-value>)',
+            primary: '#7c3aed',
           },
           fontFamily: {
             poppins: ['Poppins', 'sans-serif'],
@@ -42,15 +31,15 @@
   <div class="grain-overlay" aria-hidden="true"></div>
 
   <!-- ========== 1. NAV ========== -->
-  <nav class="fixed z-40 bg-background/80 w-full border-border border-b top-0 backdrop-blur-md">
+  <nav class="fixed z-40 bg-[#050505]/80 w-full border-white/5 border-b top-0 backdrop-blur-md">
     <div class="flex h-20 max-w-7xl mr-auto ml-auto pr-6 pl-6 items-center justify-between">
       <a href="#" class="text-xl tracking-tighter text-white font-medium uppercase z-50">Lemuria</a>
       <div class="flex gap-x-8 gap-y-8 items-center">
-        <a href="#kim-jestesmy" class="hidden md:block hover:text-white transition-colors text-sm text-muted-foreground">O nas</a>
-        <a href="#uslugi" class="hidden md:block hover:text-white transition-colors text-sm text-muted-foreground">Usługi</a>
-        <a href="#portfolio" class="hidden md:block hover:text-white transition-colors text-sm text-muted-foreground">Portfolio</a>
-        <a href="#proces" class="hidden md:block hover:text-white transition-colors text-sm text-muted-foreground">Proces</a>
-        <a href="#contact" class="text-sm font-medium rounded-full px-5 py-2 bg-primary text-primary-foreground hover:opacity-90 transition-all">
+        <a href="#kim-jestesmy" class="hidden md:block hover:text-white transition-colors text-sm text-neutral-400">O nas</a>
+        <a href="#uslugi" class="hidden md:block hover:text-white transition-colors text-sm text-neutral-400">Usługi</a>
+        <a href="#portfolio" class="hidden md:block hover:text-white transition-colors text-sm text-neutral-400">Portfolio</a>
+        <a href="#proces" class="hidden md:block hover:text-white transition-colors text-sm text-neutral-400">Proces</a>
+        <a href="#contact" class="btn-premium text-sm font-medium rounded-full px-5 py-2 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-purple-400 to-purple-600 xl:text-slate-50">
           <span class="flex items-center gap-2 z-10 relative">Kontakt</span>
         </a>
       </div>
@@ -61,23 +50,23 @@
   <header class="flex overflow-hidden relative items-center justify-center min-h-[100dvh] h-auto pt-32 pb-20 md:py-0 md:min-h-screen">
     <div class="z-0 absolute top-0 right-0 bottom-0 left-0">
       <div class="absolute top-0 right-0 bottom-0 left-0 overflow-hidden">
-        <iframe src="https://player.vimeo.com/video/1165631667?h=14698123aa&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&autopause=0" class="pointer-events-none absolute top-0 right-0 bottom-0 left-0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position: absolute; top: 50%; left: 50%; width: 177.78vh; height: 100vh; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%);"></iframe>
-        <div class="z-10 bg-gradient-to-br from-background/50 via-background/80 to-background absolute top-0 right-0 bottom-0 left-0"></div>
+        <iframe src="https://player.vimeo.com/video/1165631667?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&autopause=0" class="pointer-events-none absolute top-0 right-0 bottom-0 left-0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position: absolute; top: 50%; left: 50%; width: 177.78vh; height: 100vh; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%);"></iframe>
+        <div class="z-10 bg-gradient-to-br from-[#050505]/50 via-[#050505]/80 to-[#050505] absolute top-0 right-0 bottom-0 left-0"></div>
       </div>
     </div>
     <div class="text-center max-w-5xl z-10 mr-auto ml-auto pt-5 pr-6 pl-6 relative">
       <h1 class="fade-in-up delay-100 leading-tight sm:text-4xl md:text-6xl lg:text-7xl [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate text-3xl font-semibold text-white tracking-normal font-poppins mb-8 relative">
-        Wizja bez ograniczeń,<br><span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(252,56%,72%)]">Profesjonalnie</span>
+        Wizja bez ograniczeń,<br><span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">Profesjonalnie</span>
       </h1>
-      <p class="fade-in-up delay-200 leading-relaxed md:text-xl [animation:fadeSlideIn_0.8s_ease-out_0.3s_both] animate-on-scroll animate text-lg font-light text-muted-foreground tracking-wide font-poppins max-w-5xl mt-10 mr-auto ml-auto">
+      <p class="fade-in-up delay-200 leading-relaxed md:text-xl [animation:fadeSlideIn_0.8s_ease-out_0.3s_both] animate-on-scroll animate text-lg font-light text-neutral-400 tracking-wide font-poppins max-w-5xl mt-10 mr-auto ml-auto">
         Łączymy <span class="font-medium text-white">dekadę doświadczenia reżyserskiego</span> z potęgą generatywnego AI. Tworzymy kampanie wideo dla największych marek — szybciej, odważniej i <span class="font-medium text-white">zawsze na czas.</span>
       </p>
       <div class="flex flex-col sm:flex-row mt-12 gap-4 items-center justify-center w-full">
-        <a href="#portfolio" class="fade-in-up delay-300 flex items-center gap-2 hover:opacity-90 transition-all group text-sm font-medium text-primary-foreground bg-primary rounded-full pt-3 pr-8 pb-3 pl-8">
+        <a href="#portfolio" class="fade-in-up delay-300 flex items-center gap-2 hover:bg-white hover:text-black transition-all group text-sm font-medium text-white bg-white/5 border-white/10 border rounded-full pt-3 pr-8 pb-3 pl-8">
           <span>Zobacz nasze realizacje</span>
           <iconify-icon icon="solar:arrow-right-linear" width="16" class="transition-transform group-hover:translate-x-0.5"></iconify-icon>
         </a>
-        <a href="#contact" class="fade-in-up delay-[400ms] text-sm font-medium rounded-full px-8 py-3 border border-border hover:bg-secondary text-foreground transition-all">
+        <a href="#contact" class="fade-in-up delay-[400ms] btn-premium text-sm font-medium rounded-full px-8 py-3 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-purple-400 to-purple-600 text-white">
           <span class="flex items-center gap-2 z-10 relative">Brief w 24h</span>
         </a>
       </div>
@@ -85,20 +74,20 @@
   </header>
 
   <!-- ========== 3. LICZBY ========== -->
-  <section class="py-16 md:py-24 bg-background border-border border-b relative">
+  <section class="py-16 md:py-24 bg-[#050505] border-white/5 border-b relative">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 [animation:fadeSlideIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
           <span class="text-5xl md:text-6xl font-semibold text-white font-poppins">10+</span>
-          <p class="mt-4 text-xs uppercase tracking-widest text-muted-foreground font-poppins font-medium">Lat doświadczenia filmowego</p>
+          <p class="mt-4 text-xs uppercase tracking-widest text-neutral-400 font-poppins font-medium">Lat doświadczenia filmowego</p>
         </div>
         <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
           <span class="text-5xl md:text-6xl font-semibold text-white font-poppins">200+</span>
-          <p class="mt-4 text-xs uppercase tracking-widest text-muted-foreground font-poppins font-medium">Zrealizowanych projektów</p>
+          <p class="mt-4 text-xs uppercase tracking-widest text-neutral-400 font-poppins font-medium">Zrealizowanych projektów</p>
         </div>
         <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 [animation:fadeSlideIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
           <span class="text-5xl md:text-6xl font-semibold text-white font-poppins">100%</span>
-          <p class="mt-4 text-xs uppercase tracking-widest text-muted-foreground font-poppins font-medium">Terminowości (Safe Delivery)</p>
+          <p class="mt-4 text-xs uppercase tracking-widest text-neutral-400 font-poppins font-medium">Terminowości (Safe Delivery)</p>
         </div>
       </div>
     </div>
@@ -108,8 +97,8 @@
   <section class="pt-24 pb-24">
     <div class="max-w-7xl mr-auto ml-auto pr-6 pl-6">
       <div class="text-center mb-20">
-        <h2 class="md:text-5xl text-3xl font-medium text-white tracking-tight font-poppins mb-6">Doświadczenie, <span class="text-muted-foreground">które pracuje <br class="hidden md:block">na</span>&nbsp;Twój sukces.</h2>
-        <p class="md:text-lg leading-relaxed text-base font-light text-muted-foreground font-poppins text-center max-w-2xl mr-auto ml-auto">Setki zrealizowanych projektów przekuliśmy w&nbsp;niezawodny warsztat i&nbsp;procesy, które wnosimy do&nbsp;Twojej marki. Gwarantujemy płynną komunikację i&nbsp;filmową jakość, <span class="text-white font-normal">niezależnie od&nbsp;skali Twojej wizji.</span></p>
+        <h2 class="md:text-5xl text-3xl font-medium text-white tracking-tight font-poppins mb-6">Doświadczenie, <span class="text-neutral-500">które pracuje <br class="hidden md:block">na</span>&nbsp;Twój sukces.</h2>
+        <p class="md:text-lg leading-relaxed text-base font-light text-neutral-400 font-poppins text-center max-w-2xl mr-auto ml-auto">Setki zrealizowanych projektów przekuliśmy w&nbsp;niezawodny warsztat i&nbsp;procesy, które wnosimy do&nbsp;Twojej marki. Gwarantujemy płynną komunikację i&nbsp;filmową jakość, <span class="text-white font-normal">niezależnie od&nbsp;skali Twojej wizji.</span></p>
       </div>
       <div class="mt-20 w-full overflow-hidden relative fade-in-up delay-300 select-none" style="mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
         <div class="ticker-track flex gap-16 gap-x-16 gap-y-16 items-center">
@@ -137,79 +126,79 @@
   </section>
 
   <!-- ========== 5. CO ROBIMY / CAPABILITIES ========== -->
-  <section class="overflow-hidden bg-background border-border border-b pt-24 pb-24 relative" id="uslugi">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+  <section class="overflow-hidden bg-[#050505] border-white/5 border-b pt-24 pb-24 relative" id="uslugi">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none"></div>
     <div class="z-10 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
       <div class="text-center mb-16 md:mb-24">
-        <span class="uppercase block text-xs font-medium tracking-widest text-primary mb-4">Co robimy</span>
+        <span class="uppercase block text-xs font-medium tracking-widest text-violet-400 mb-4">Co robimy</span>
         <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight font-poppins mb-6">Pełne spektrum produkcji wideo</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="border-gradient rounded-[24px] p-8 fluxora-card hover:translate-y-[-2px] transition-all duration-300 [animation:fadeSlideIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
           <div class="flex justify-between items-start mb-4">
             <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white"><iconify-icon icon="solar:videocamera-record-linear" width="20"></iconify-icon></div>
-            <span class="text-[10px] uppercase tracking-wider text-muted-foreground border border-input px-2 py-1 rounded-full">Reklama</span>
+            <span class="text-[10px] uppercase tracking-wider text-neutral-400 border border-white/10 px-2 py-1 rounded-full">Reklama</span>
           </div>
           <h3 class="text-lg font-medium text-white mb-2 font-poppins">Filmy reklamowe</h3>
-          <p class="text-muted-foreground text-sm font-light font-poppins">Spoty TV i digital, które budują marki i sprzedają.</p>
+          <p class="text-neutral-400 text-sm font-light font-poppins">Spoty TV i digital, które budują marki i sprzedają.</p>
         </div>
         <div class="border-gradient fluxora-card hover:translate-y-[-2px] transition-all duration-300 [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate-on-scroll rounded-[24px] p-8">
           <div class="flex justify-between items-start mb-4">
             <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white"><iconify-icon icon="solar:clapperboard-play-linear" width="20"></iconify-icon></div>
-            <span class="text-[10px] uppercase tracking-wider text-muted-foreground border border-input px-2 py-1 rounded-full">Branding</span>
+            <span class="text-[10px] uppercase tracking-wider text-neutral-400 border border-white/10 px-2 py-1 rounded-full">Branding</span>
           </div>
           <h3 class="text-lg font-medium text-white mb-2 font-poppins">Brand Stories</h3>
-          <p class="text-muted-foreground text-sm font-light font-poppins leading-relaxed">Narracje wizualne, które definiują tożsamość marki.</p>
+          <p class="text-neutral-400 text-sm font-light font-poppins leading-relaxed">Narracje wizualne, które definiują tożsamość marki.</p>
         </div>
         <div class="border-gradient rounded-[24px] p-8 fluxora-card hover:translate-y-[-2px] transition-all duration-300 [animation:fadeSlideIn_0.8s_ease-out_0.3s_both] animate-on-scroll text-left">
           <div class="flex justify-between items-start mb-4">
             <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white"><iconify-icon icon="solar:users-group-two-rounded-linear" width="20"></iconify-icon></div>
-            <span class="text-[10px] uppercase tracking-wider text-muted-foreground border border-input px-2 py-1 rounded-full">HR</span>
+            <span class="text-[10px] uppercase tracking-wider text-neutral-400 border border-white/10 px-2 py-1 rounded-full">HR</span>
           </div>
           <h3 class="text-lg font-medium text-white mb-2 font-poppins">Employer Branding</h3>
-          <p class="leading-relaxed text-sm font-light text-muted-foreground font-poppins">Autentyczne filmy, które przyciągają najlepsze talenty.</p>
+          <p class="leading-relaxed text-sm font-light text-neutral-400 font-poppins">Autentyczne filmy, które przyciągają najlepsze talenty.</p>
         </div>
         <div class="border-gradient fluxora-card hover:translate-y-[-2px] transition-all duration-300 [animation:fadeSlideIn_0.8s_ease-out_0.4s_both] animate-on-scroll rounded-[24px] p-8">
           <div class="flex justify-between items-start mb-4">
             <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white"><iconify-icon icon="solar:magic-stick-3-linear" width="20"></iconify-icon></div>
-            <span class="text-[10px] uppercase tracking-wider text-muted-foreground border border-input px-2 py-1 rounded-full">Animacja</span>
+            <span class="text-[10px] uppercase tracking-wider text-neutral-400 border border-white/10 px-2 py-1 rounded-full">Animacja</span>
           </div>
           <h3 class="text-lg font-medium text-white mb-2 font-poppins">Motion Design</h3>
-          <p class="text-muted-foreground text-sm font-light font-poppins">Animacje 2D/3D i generatywne efekty wizualne.</p>
+          <p class="text-neutral-400 text-sm font-light font-poppins">Animacje 2D/3D i generatywne efekty wizualne.</p>
         </div>
         <div class="border-gradient rounded-[24px] p-8 fluxora-card hover:translate-y-[-2px] transition-all duration-300 [animation:fadeSlideIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
           <div class="flex justify-between items-start mb-4">
             <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white"><iconify-icon icon="solar:box-linear" width="20"></iconify-icon></div>
-            <span class="text-[10px] uppercase tracking-wider text-muted-foreground border border-input px-2 py-1 rounded-full">E-commerce</span>
+            <span class="text-[10px] uppercase tracking-wider text-neutral-400 border border-white/10 px-2 py-1 rounded-full">E-commerce</span>
           </div>
           <h3 class="text-lg font-medium text-white mb-2 font-poppins">Product Video</h3>
-          <p class="text-muted-foreground text-sm font-light font-poppins">Prezentacje produktów, które konwertują i zachwycają.</p>
+          <p class="text-neutral-400 text-sm font-light font-poppins">Prezentacje produktów, które konwertują i zachwycają.</p>
         </div>
         <div class="border-gradient rounded-[24px] p-8 fluxora-card hover:translate-y-[-2px] transition-all duration-300 [animation:fadeSlideIn_0.8s_ease-out_0.6s_both] animate-on-scroll">
           <div class="flex justify-between items-start mb-4">
             <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white"><iconify-icon icon="solar:smartphone-linear" width="20"></iconify-icon></div>
-            <span class="text-[10px] uppercase tracking-wider text-muted-foreground border border-input px-2 py-1 rounded-full">Social</span>
+            <span class="text-[10px] uppercase tracking-wider text-neutral-400 border border-white/10 px-2 py-1 rounded-full">Social</span>
           </div>
           <h3 class="text-lg font-medium text-white font-poppins mb-2">Social Video</h3>
-          <p class="text-muted-foreground text-sm font-light font-poppins leading-relaxed">Krótkie formy zoptymalizowane pod algorytmy platform.</p>
+          <p class="text-neutral-400 text-sm font-light font-poppins leading-relaxed">Krótkie formy zoptymalizowane pod algorytmy platform.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== 7. PORTFOLIO ========== -->
-  <section class="md:py-32 overflow-hidden bg-background border-border border-b pt-24 pb-24 relative" id="portfolio">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background pointer-events-none"></div>
+  <section class="md:py-32 overflow-hidden bg-[#050505] border-white/5 border-b pt-24 pb-24 relative" id="portfolio">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/10 via-[#050505] to-[#050505] pointer-events-none"></div>
     <div class="w-full z-10 relative">
       <div class="flex flex-col md:flex-row md:mb-24 gap-8 max-w-[90rem] mr-auto mb-16 ml-auto pr-6 pl-6 gap-x-8 gap-y-8 justify-between items-start md:items-end">
         <div class="max-w-2xl">
-          <span class="text-xs font-semibold text-primary uppercase tracking-widest mb-4 block">Portfolio</span>
-          <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight leading-[1.1] font-poppins">Wybrane <span class="text-muted-foreground">realizacje</span></h2>
+          <span class="text-xs font-semibold text-violet-400 uppercase tracking-widest mb-4 block">Portfolio</span>
+          <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight leading-[1.1] font-poppins">Wybrane <span class="text-neutral-500">realizacje</span></h2>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 w-full gap-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
         <!-- Adamed -->
-        <div class="group overflow-hidden md:h-[32rem] lg:h-auto lg:aspect-video bg-card w-full h-[28rem] border-border border relative md:col-span-2">
+        <div class="group overflow-hidden md:h-[32rem] lg:h-auto lg:aspect-video bg-neutral-900 w-full h-[28rem] border-white/5 border relative">
           <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4a7c8cca-efcb-44d6-b7cb-7bc60084e209_3840w.jpg" alt="Adamed Case Study" class="transition-transform duration-700 group-hover:scale-105 w-full h-full object-cover">
           <div class="absolute inset-0 bg-transparent transition-colors duration-700 z-10 pointer-events-none"></div>
           <button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white/10 rounded-full backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 z-30 hover:bg-white/20 cursor-pointer" id="play-adamed-video">
@@ -220,11 +209,11 @@
               <span class="inline-block px-3 py-1 text-[10px] font-medium text-white uppercase tracking-wider border border-white/20 rounded-full bg-white/10 backdrop-blur-md">REKLAMA TV</span>
             </div>
             <h3 class="md:text-3xl text-2xl font-medium text-white tracking-tight font-poppins mb-3">Adamed — Kampania wizerunkowa</h3>
-            <p class="text-secondary-foreground text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">W projekcie dla Adamed stanęliśmy przed wyzwaniem: połączyć różnorodne Key Visuale w jedną, płynną opowieść. Dzięki autorskiemu workflow i wsparciu AI, stworzyliśmy spójną warstwę wizualną, która oddaje skalę marki.</p>
+            <p class="text-neutral-300 text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">W projekcie dla Adamed stanęliśmy przed wyzwaniem: połączyć różnorodne Key Visuale w jedną, płynną opowieść. Dzięki autorskiemu workflow i wsparciu AI, stworzyliśmy spójną warstwę wizualną, która oddaje skalę marki.</p>
           </div>
         </div>
         <!-- ADAExpress -->
-        <div class="group overflow-hidden md:h-[32rem] lg:h-auto lg:aspect-video bg-card w-full h-[28rem] border-border border relative">
+        <div class="group overflow-hidden md:h-[32rem] lg:h-auto lg:aspect-video bg-neutral-900 w-full h-[28rem] border-white/5 border relative">
           <div class="overflow-hidden transition-all duration-700 ease-in-out absolute top-0 right-0 bottom-0 left-0">
             <iframe src="https://player.vimeo.com/video/1160566735?h=5f61c0b8c8&background=1&autoplay=1&loop=1&muted=1&autopause=0" class="absolute inset-0 w-full h-full pointer-events-none scale-[1.75]" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -238,11 +227,11 @@
               <span class="inline-block px-3 py-1 text-[10px] font-medium text-white uppercase tracking-wider border border-white/20 rounded-full bg-white/10 backdrop-blur-md">MOTION DESIGN</span>
             </div>
             <h3 class="md:text-3xl text-2xl font-medium text-white tracking-tight font-poppins mb-3">ADAExpress</h3>
-            <p class="text-secondary-foreground text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">Dynamiczne intro stworzone na fundamencie pojedynczego Key Visuala. Rozwinęliśmy statyczną grafikę w spójną, wielowymiarową opowieść z filmową energią.</p>
+            <p class="text-neutral-300 text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">Dynamiczne intro stworzone na fundamencie pojedynczego Key Visuala. Rozwinęliśmy statyczną grafikę w spójną, wielowymiarową opowieść z filmową energią.</p>
           </div>
         </div>
         <!-- Aerox -->
-        <div class="group relative w-full overflow-hidden border border-border bg-card h-[28rem] md:h-[32rem] lg:h-auto lg:aspect-video">
+        <div class="group relative w-full overflow-hidden border border-white/5 bg-neutral-900 h-[28rem] md:h-[32rem] lg:h-auto lg:aspect-video">
           <div class="overflow-hidden transition-all duration-700 ease-in-out absolute top-0 right-0 bottom-0 left-0">
             <iframe src="https://player.vimeo.com/video/1160567568?h=9d9fa3e549&background=1&autoplay=1&loop=1&muted=1&autopause=0" class="absolute inset-0 w-full h-full pointer-events-none scale-[1.75]" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -256,11 +245,11 @@
               <span class="inline-block px-3 py-1 text-[10px] font-medium text-white uppercase tracking-wider border border-white/20 rounded-full bg-white/10 backdrop-blur-md">E-COMMERCE</span>
             </div>
             <h3 class="md:text-3xl text-2xl font-medium text-white tracking-tight font-poppins mb-3">Aerox</h3>
-            <p class="text-secondary-foreground text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">Zrealizowaliśmy reklamę produktu na bazie jednego materiału źródłowego. Wykorzystując synergię modeli AI, rozbudowaliśmy statyczny asset w angażujący spot.</p>
+            <p class="text-neutral-300 text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">Zrealizowaliśmy reklamę produktu na bazie jednego materiału źródłowego. Wykorzystując synergię modeli AI, rozbudowaliśmy statyczny asset w angażujący spot.</p>
           </div>
         </div>
         <!-- Bromiduo -->
-        <div class="group relative w-full overflow-hidden border border-border bg-card h-[28rem] md:h-[32rem] lg:h-auto lg:aspect-video">
+        <div class="group relative w-full overflow-hidden border border-white/5 bg-neutral-900 h-[28rem] md:h-[32rem] lg:h-auto lg:aspect-video">
           <div class="overflow-hidden transition-all duration-700 ease-in-out absolute top-0 right-0 bottom-0 left-0">
             <iframe src="https://player.vimeo.com/video/1160567518?h=c2ede5d515&background=1&autoplay=1&loop=1&muted=1&autopause=0" class="absolute inset-0 w-full h-full pointer-events-none scale-[1.75]" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -273,11 +262,11 @@
               <span class="inline-block px-3 py-1 text-[10px] font-medium text-white uppercase tracking-wider border border-white/20 rounded-full bg-white/10 backdrop-blur-md">REKLAMA TV</span>
             </div>
             <h3 class="md:text-3xl text-2xl font-medium text-white tracking-tight font-poppins mb-3">Bromiduo</h3>
-            <p class="text-secondary-foreground text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">Zrealizowaliśmy scenariusz niemożliwy do sfilmowania tradycyjnymi metodami. Przy użyciu AI powołaliśmy do życia bolid F1 prowadzony w pełnej synergii przez dwóch kierowców jednocześnie.</p>
+            <p class="text-neutral-300 text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">Zrealizowaliśmy scenariusz niemożliwy do sfilmowania tradycyjnymi metodami. Przy użyciu AI powołaliśmy do życia bolid F1 prowadzony w pełnej synergii przez dwóch kierowców jednocześnie.</p>
           </div>
         </div>
         <!-- RESPIaktywni -->
-        <div class="group relative w-full overflow-hidden border border-border bg-card h-[28rem] md:h-[32rem] lg:h-auto lg:aspect-video">
+        <div class="group relative w-full overflow-hidden border border-white/5 bg-neutral-900 h-[28rem] md:h-[32rem] lg:h-auto lg:aspect-video md:col-span-2">
           <div class="overflow-hidden absolute top-0 right-0 bottom-0 left-0 transition-all duration-700 ease-in-out">
             <iframe src="https://player.vimeo.com/video/1160568408?h=1f69572b1e&background=1&autoplay=1&muted=1&loop=1&autopause=0" class="pointer-events-none w-full h-full absolute top-0 right-0 bottom-0 left-0 scale-[1.75]" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -291,7 +280,7 @@
               <span class="inline-block px-3 py-1 text-[10px] font-medium text-white uppercase tracking-wider border border-white/20 rounded-full bg-white/10 backdrop-blur-md">MOTION DESIGN</span>
             </div>
             <h3 class="md:text-3xl text-2xl font-medium text-white tracking-tight font-poppins mb-3">RESPIaktywni</h3>
-            <p class="text-secondary-foreground text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">Połączyliśmy motion design z możliwościami generatywnej sztucznej inteligencji. Dzięki AI stworzyliśmy zaawansowane wizualnie assety, które połączyliśmy w zachwycające intro.</p>
+            <p class="text-neutral-300 text-sm md:text-base font-light leading-relaxed max-w-xl font-poppins">Połączyliśmy motion design z możliwościami generatywnej sztucznej inteligencji. Dzięki AI stworzyliśmy zaawansowane wizualnie assety, które połączyliśmy w zachwycające intro.</p>
           </div>
         </div>
       </div>
@@ -299,79 +288,79 @@
   </section>
 
   <!-- ========== 8. SAFE DELIVERY ========== -->
-  <section class="md:py-32 overflow-hidden bg-background border-border border-b pt-24 pb-24 relative" id="safe-delivery">
+  <section class="md:py-32 overflow-hidden bg-[#050505] border-white/5 border-b pt-24 pb-24 relative" id="safe-delivery">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 md:mb-20">
         <span class="uppercase block text-xs font-medium tracking-widest text-green-500 mb-4">Safe Delivery</span>
         <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight font-poppins mb-6 leading-tight">Bezpieczna realizacja.<br>Bez niespodzianek.</h2>
-        <p class="md:text-lg text-base font-light text-muted-foreground font-poppins max-w-2xl mx-auto">Wiemy, że powierzasz nam swój budżet, deadline i reputację marki. Dlatego stawiamy na dwa filary, które eliminują ryzyko.</p>
+        <p class="md:text-lg text-base font-light text-neutral-400 font-poppins max-w-2xl mx-auto">Wiemy, że powierzasz nam swój budżet, deadline i reputację marki. Dlatego stawiamy na dwa filary, które eliminują ryzyko.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 hover:translate-y-[-2px] transition-all duration-300 [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
-          <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-white border border-input">
+          <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-white border border-white/10">
             <iconify-icon icon="solar:clock-circle-linear" width="24"></iconify-icon>
           </div>
           <h3 class="text-xl font-medium text-white font-poppins mb-4">Terminowość</h3>
-          <p class="text-muted-foreground text-sm md:text-base font-light leading-relaxed font-poppins">Każdy projekt ma precyzyjny harmonogram z milestones. Dostarczamy na czas — bo wiemy, że Twoja kampania nie poczeka. Dotrzymujemy terminów dzięki sprawdzonym procesom i rezerwom produkcyjnym.</p>
+          <p class="text-neutral-400 text-sm md:text-base font-light leading-relaxed font-poppins">Każdy projekt ma precyzyjny harmonogram z milestones. Dostarczamy na czas — bo wiemy, że Twoja kampania nie poczeka. Dotrzymujemy terminów dzięki sprawdzonym procesom i rezerwom produkcyjnym.</p>
         </div>
         <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 hover:translate-y-[-2px] transition-all duration-300 [animation:fadeSlideIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
-          <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-white border border-input">
+          <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-white border border-white/10">
             <iconify-icon icon="solar:checklist-minimalistic-linear" width="24"></iconify-icon>
           </div>
           <h3 class="text-xl font-medium text-white font-poppins mb-4">Klarowność komunikacji</h3>
-          <p class="text-muted-foreground text-sm md:text-base font-light leading-relaxed font-poppins">Zero zgadywania. Na każdym etapie wiesz, co się dzieje, co zostało do zrobienia i jakie są kolejne kroki. Dedykowany opiekun projektu, regularne statusy, przejrzyste feedbacki.</p>
+          <p class="text-neutral-400 text-sm md:text-base font-light leading-relaxed font-poppins">Zero zgadywania. Na każdym etapie wiesz, co się dzieje, co zostało do zrobienia i jakie są kolejne kroki. Dedykowany opiekun projektu, regularne statusy, przejrzyste feedbacki.</p>
         </div>
       </div>
-      <p class="text-center mt-12 text-muted-foreground text-base md:text-lg font-light font-poppins">Współpraca z Lemuria to spokój — od pierwszego briefu do finalnej dostawy plików.</p>
+      <p class="text-center mt-12 text-neutral-400 text-base md:text-lg font-light font-poppins">Współpraca z Lemuria to spokój — od pierwszego briefu do finalnej dostawy plików.</p>
     </div>
   </section>
 
   <!-- ========== 9. PROCES ========== -->
-  <section class="overflow-hidden border-border border-b pt-24 pb-24 relative" id="proces">
+  <section class="overflow-hidden border-white/5 border-b pt-24 pb-24 relative" id="proces">
     <div class="max-w-7xl mr-auto ml-auto pr-6 pl-6 relative z-20">
-      <div class="border-gradient flex flex-col rounded-[24px] pt-8 pr-8 pb-8 pl-8 relative bg-background/30 backdrop-blur-lg">
+      <div class="border-gradient flex flex-col rounded-[24px] pt-8 pr-8 pb-8 pl-8 relative bg-[#050505]/30 backdrop-blur-lg">
         <div class="flex flex-col md:flex-row gap-6 items-start md:items-center mb-10">
           <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight font-poppins leading-tight drop-shadow-md">Jak pracujemy</h2>
           <span aria-hidden="true" role="separator" aria-orientation="vertical" class="hidden md:block w-px bg-white/20 h-10"></span>
-          <p class="md:text-base text-sm font-light text-foreground font-poppins max-w-sm">Każdy etap kończy się Twoją akceptacją. Pełna kontrola i przejrzystość od startu do finału.</p>
+          <p class="md:text-base text-sm font-light text-neutral-200 font-poppins max-w-sm">Każdy etap kończy się Twoją akceptacją. Pełna kontrola i przejrzystość od startu do finału.</p>
         </div>
-        <div class="h-px bg-border mb-10"></div>
+        <div class="h-px bg-white/10 mb-10"></div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-background/50 backdrop-blur-md">
-            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-background text-xs text-white">KROK 01</span>
+          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
+            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 01</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:document-text-linear" width="40" class="text-white/80"></iconify-icon></div>
             <h3 class="text-xl font-medium text-white mb-2 font-poppins">Brief i Cele</h3>
-            <p class="text-sm font-light text-secondary-foreground font-poppins">Analizujemy Twoje potrzeby, grupę docelową i kanały dystrybucji.</p>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Analizujemy Twoje potrzeby, grupę docelową i kanały dystrybucji.</p>
           </div>
-          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-background/50 backdrop-blur-md">
-            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-background text-xs text-white">KROK 02</span>
+          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
+            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 02</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:pen-new-square-linear" width="40" class="text-white/80"></iconify-icon></div>
             <h3 class="text-xl font-medium text-white mb-2 font-poppins">Scenariusz</h3>
-            <p class="text-sm font-light text-secondary-foreground font-poppins">Tworzymy koncept kreatywny i scenariusz filmowy.</p>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Tworzymy koncept kreatywny i scenariusz filmowy.</p>
           </div>
-          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-background/50 backdrop-blur-md">
-            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-background text-xs text-white">KROK 03</span>
+          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
+            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 03</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:gallery-wide-linear" width="40" class="text-white/80"></iconify-icon></div>
             <h3 class="text-xl font-medium text-white mb-2 font-poppins">Storyboard</h3>
-            <p class="text-sm font-light text-secondary-foreground font-poppins">Precyzyjny plan ujęć przed startem produkcji.</p>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Precyzyjny plan ujęć przed startem produkcji.</p>
           </div>
-          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-background/50 backdrop-blur-md">
-            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-background text-xs text-white">KROK 04</span>
+          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
+            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 04</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:videocamera-record-linear" width="40" class="text-white/80"></iconify-icon></div>
             <h3 class="text-xl font-medium text-white mb-2 font-poppins">Reżyseria Scen</h3>
-            <p class="text-sm font-light text-secondary-foreground font-poppins">Generowanie i postprodukcja ujęć reżyserowana przez nas.</p>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Generowanie i postprodukcja ujęć reżyserowana przez nas.</p>
           </div>
-          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-background/50 backdrop-blur-md">
-            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-background text-xs text-white">KROK 05</span>
+          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
+            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 05</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:clapperboard-play-linear" width="40" class="text-white/80"></iconify-icon></div>
             <h3 class="text-xl font-medium text-white mb-2 font-poppins">AI Video Gen</h3>
-            <p class="text-sm font-light text-secondary-foreground font-poppins">Profesjonalny montaż i filmowa korekcja barwna.</p>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Profesjonalny montaż i filmowa korekcja barwna.</p>
           </div>
-          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-background/50 backdrop-blur-md">
-            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-background text-xs text-white">KROK 06</span>
+          <div class="border-gradient rounded-[24px] p-8 relative flex flex-col fluxora-card bg-[#050505]/50 backdrop-blur-md">
+            <span class="absolute -top-3 left-6 inline-flex items-center px-4 py-1 rounded-full border border-white/20 bg-[#050505] text-xs text-white">KROK 06</span>
             <div class="mb-6 mt-2"><iconify-icon icon="solar:music-note-slider-linear" width="40" class="text-white/80"></iconify-icon></div>
             <h3 class="text-xl font-medium text-white mb-2 font-poppins">Udźwiękowienie</h3>
-            <p class="text-sm font-light text-secondary-foreground font-poppins">Sound design, lektor i mix audio w standardzie premium.</p>
+            <p class="text-sm font-light text-neutral-300 font-poppins">Sound design, lektor i mix audio w standardzie premium.</p>
           </div>
         </div>
       </div>
@@ -379,19 +368,19 @@
   </section>
 
   <!-- ========== 9. KIM JESTEŚMY ========== -->
-  <section class="md:py-32 overflow-hidden bg-background border-border border-b pt-24 pb-24 relative" id="kim-jestesmy">
+  <section class="md:py-32 overflow-hidden bg-[#050505] border-white/5 border-b pt-24 pb-24 relative" id="kim-jestesmy">
     <div class="max-w-7xl mx-auto px-6">
-      <span class="uppercase block text-xs font-medium tracking-widest text-primary mb-4">Kim jesteśmy</span>
+      <span class="uppercase block text-xs font-medium tracking-widest text-violet-400 mb-4">Kim jesteśmy</span>
       <div class="grid grid-cols-1 md:grid-cols-12 md:gap-16 gap-12">
         <div class="md:col-span-7">
           <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight font-poppins mb-8 leading-tight">Content House nowej generacji</h2>
-          <p class="leading-relaxed md:text-lg text-base font-light text-muted-foreground font-poppins">
+          <p class="leading-relaxed md:text-lg text-base font-light text-neutral-400 font-poppins">
             Lemuria łączy dekadę doświadczenia filmowego z generatywną sztuczną inteligencją — tworząc filmy reklamowe, animacje i content wideo, które do tej pory były poza zasięgiem.
           </p>
         </div>
         <div class="md:col-span-5 flex items-center">
           <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10">
-            <iconify-icon icon="solar:chat-round-dots-linear" width="32" class="text-primary mb-4"></iconify-icon>
+            <iconify-icon icon="solar:chat-round-dots-linear" width="32" class="text-purple-400 mb-4"></iconify-icon>
             <blockquote class="text-xl md:text-2xl font-medium text-white font-poppins leading-snug">
               „AI to nasze narzędzie. Nie produkt.<br>Reżyserujemy każde ujęcie z&nbsp;intencją."
             </blockquote>
@@ -402,93 +391,93 @@
   </section>
 
   <!-- ========== 10. FAQ ========== -->
-  <section class="py-24 md:py-32 border-b border-border bg-background relative" id="faq">
+  <section class="py-24 md:py-32 border-b border-white/5 bg-[#050505] relative" id="faq">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
         <div class="lg:col-span-5">
           <div class="lg:sticky lg:top-32">
             <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight font-poppins mb-6">Najczęściej zadawane pytania</h2>
-            <p class="text-base md:text-lg text-muted-foreground font-poppins font-light mb-8 max-w-sm">Odpowiedzi na pytania dotyczące produkcji wideo wspieranej przez AI.</p>
-            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-secondary-foreground transition-colors">Masz inne pytanie? <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></a>
+            <p class="text-base md:text-lg text-neutral-400 font-poppins font-light mb-8 max-w-sm">Odpowiedzi na pytania dotyczące produkcji wideo wspieranej przez AI.</p>
+            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-neutral-300 transition-colors">Masz inne pytanie? <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></a>
           </div>
         </div>
-        <div class="lg:col-span-7 divide-y divide-border">
+        <div class="lg:col-span-7 divide-y divide-white/10">
           <details class="group py-6 first:pt-0">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="group-hover:text-foreground transition-colors text-lg md:text-xl font-medium text-white font-poppins pr-8">Czy produkcja filmowa z AI sprawdzi się w każdej kampanii?</h3>
+              <h3 class="group-hover:text-neutral-200 transition-colors text-lg md:text-xl font-medium text-white font-poppins pr-8">Czy produkcja filmowa z AI sprawdzi się w każdej kampanii?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base"><p>Nie. W Lemurii zawsze weryfikujemy, czy generatywna produkcja ma realny sens dla celu kampanii i formatu dystrybucji. Jeżeli klasyczna produkcja będzie lepszym rozwiązaniem – rekomendujemy inne podejście.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p>Nie. W Lemurii zawsze weryfikujemy, czy generatywna produkcja ma realny sens dla celu kampanii i formatu dystrybucji. Jeżeli klasyczna produkcja będzie lepszym rozwiązaniem – rekomendujemy inne podejście.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Jak wygląda współpraca z agencją kreatywną przy produkcji AI?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Jak wygląda współpraca z agencją kreatywną przy produkcji AI?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base"><p class="mb-4">Pracujemy w modelu produkcyjnym, znanym z klasycznych realizacji reklamowych:</p><ul class="list-disc list-inside space-y-1 mb-4 pl-2"><li>brief</li><li>koncept i scenariusz</li><li>storyboard</li><li>realizacja i iteracje</li><li>montaż i postprodukcja</li></ul><p>Możemy pracować zarówno bezpośrednio z klientem, jak i w ścisłej współpracy z zespołem kreatywnym agencji. Mamy duże doświadczenie w pracy zarówno z światowymi markami jaki i małymi zespołami.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p class="mb-4">Pracujemy w modelu produkcyjnym, znanym z klasycznych realizacji reklamowych:</p><ul class="list-disc list-inside space-y-1 mb-4 pl-2"><li>brief</li><li>koncept i scenariusz</li><li>storyboard</li><li>realizacja i iteracje</li><li>montaż i postprodukcja</li></ul><p>Możemy pracować zarówno bezpośrednio z klientem, jak i w ścisłej współpracy z zespołem kreatywnym agencji. Mamy duże doświadczenie w pracy zarówno z światowymi markami jaki i małymi zespołami.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Czy realizujecie projekty white-label dla agencji?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy realizujecie projekty white-label dla agencji?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base"><p>Tak. Realizujemy projekty produkcyjne dla agencji w modelu white-label.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p>Tak. Realizujemy projekty produkcyjne dla agencji w modelu white-label.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Ile trwa realizacja filmu reklamowego z wykorzystaniem AI?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Ile trwa realizacja filmu reklamowego z wykorzystaniem AI?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base"><p>Czas realizacji zależy od skali projektu, ale w wielu przypadkach proces jest krótszy niż w klasycznej produkcji. Najczęściej są to od kilku dni do kilku tygodni – w zależności od zakresu.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p>Czas realizacji zależy od skali projektu, ale w wielu przypadkach proces jest krótszy niż w klasycznej produkcji. Najczęściej są to od kilku dni do kilku tygodni – w zależności od zakresu.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Czym różni się Wasza produkcja AI od „filmów generowanych z promptów"?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czym różni się Wasza produkcja AI od „filmów generowanych z promptów"?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base space-y-4"><p>Pracujemy w standardowym procesie produkcyjnym: na koncepcie, scenariuszu i storyboardzie. AI jest u nas narzędziem realizacyjnym, a nie źródłem pomysłu. Każdy projekt prowadzony jest reżysersko – z kontrolą nad narracją, rytmem, kompozycją ujęć i estetyką marki.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Pracujemy w standardowym procesie produkcyjnym: na koncepcie, scenariuszu i storyboardzie. AI jest u nas narzędziem realizacyjnym, a nie źródłem pomysłu. Każdy projekt prowadzony jest reżysersko – z kontrolą nad narracją, rytmem, kompozycją ujęć i estetyką marki.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Czy możliwe są poprawki i iteracje w trakcie produkcji?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy możliwe są poprawki i iteracje w trakcie produkcji?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak. Jedną z głównych zalet generatywnej produkcji jest możliwość szybkiego wprowadzania zmian i testowania wariantów ujęć, scen oraz stylu wizualnego – bez konieczności powtarzania całego procesu zdjęciowego.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak. Jedną z głównych zalet generatywnej produkcji jest możliwość szybkiego wprowadzania zmian i testowania wariantów ujęć, scen oraz stylu wizualnego – bez konieczności powtarzania całego procesu zdjęciowego.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Czy jesteście w stanie zachować spójność wizualną z identyfikacją marki?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy jesteście w stanie zachować spójność wizualną z identyfikacją marki?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak. Spójność stylistyczna, tonalna i narracyjna projektu jest jednym z kluczowych elementów procesu. Pracujemy na referencjach, brand bookach oraz wcześniej zdefiniowanym stylu wizualnym, prowadząc proces generatywny reżysersko i kuratorsko.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak. Spójność stylistyczna, tonalna i narracyjna projektu jest jednym z kluczowych elementów procesu. Pracujemy na referencjach, brand bookach oraz wcześniej zdefiniowanym stylu wizualnym, prowadząc proces generatywny reżysersko i kuratorsko.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Czy wykorzystanie AI jest bezpieczne dla komunikacji marki?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy wykorzystanie AI jest bezpieczne dla komunikacji marki?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak – pod warunkiem odpowiedniego procesu. W Lemurii każdy projekt przechodzi standardową kontrolę kreatywną i produkcyjną. AI nie generuje finalnego materiału bez selekcji, kuracji i odpowiedzialności reżyserskiej.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak – pod warunkiem odpowiedniego procesu. W Lemurii każdy projekt przechodzi standardową kontrolę kreatywną i produkcyjną. AI nie generuje finalnego materiału bez selekcji, kuracji i odpowiedzialności reżyserskiej.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Czy realizujecie projekty wymagające NDA i poufności?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy realizujecie projekty wymagające NDA i poufności?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base"><p>Tak. Regularnie pracujemy przy projektach objętych umowami NDA – zarówno dla marek, jak i agencji.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p>Tak. Regularnie pracujemy przy projektach objętych umowami NDA – zarówno dla marek, jak i agencji.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Czy produkcja z wykorzystaniem AI jest tańsza od klasycznej produkcji filmowej?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy produkcja z wykorzystaniem AI jest tańsza od klasycznej produkcji filmowej?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base space-y-4"><p>W wielu przypadkach – tak. Ostateczny budżet zależy jednak od skali projektu, liczby scen i zakresu postprodukcji.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>W wielu przypadkach – tak. Ostateczny budżet zależy jednak od skali projektu, liczby scen i zakresu postprodukcji.</p></div>
           </details>
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-foreground transition-colors">Czy realizujecie projekty hybrydowe (AI + klasyczne zdjęcia / animacja)?</h3>
+              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy realizujecie projekty hybrydowe (AI + klasyczne zdjęcia / animacja)?</h3>
               <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
             </summary>
-            <div class="mt-4 text-muted-foreground font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak. Specjalizujemy się również w produkcjach hybrydowych, łączących generatywną AI z klasyczną animacją, materiałem filmowym oraz motion designem.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak. Specjalizujemy się również w produkcjach hybrydowych, łączących generatywną AI z klasyczną animacją, materiałem filmowym oraz motion designem.</p></div>
           </details>
         </div>
       </div>
@@ -497,32 +486,32 @@
 
   <!-- ========== 11. KONTAKT ========== -->
   <section class="overflow-hidden pt-32 pb-32 relative" id="contact">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[120px] pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         <div class="text-left">
-          <h2 class="md:text-5xl text-3xl font-medium text-white tracking-tight font-poppins mb-8">Zacznijmy<br><span class="text-muted-foreground">wspólną historię.</span></h2>
-          <p class="text-base md:text-lg font-light text-muted-foreground font-poppins mb-12">Opowiedz nam o swoim projekcie. Odpowiemy w ciągu 24 godzin z propozycją działania.</p>
+          <h2 class="md:text-5xl text-3xl font-medium text-white tracking-tight font-poppins mb-8">Zacznijmy<br><span class="text-neutral-500">wspólną historię.</span></h2>
+          <p class="text-base md:text-lg font-light text-neutral-400 font-poppins mb-12">Opowiedz nam o swoim projekcie. Odpowiemy w ciągu 24 godzin z propozycją działania.</p>
           <div class="space-y-8">
             <div class="flex flex-col">
-              <span class="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">Napisz do nas</span>
-              <a href="mailto:hi@lemuria.studio" class="md:text-3xl hover:text-primary transition-colors text-2xl font-light text-white font-poppins">hi@lemuria.studio</a>
+              <span class="text-[10px] uppercase tracking-widest text-neutral-500 mb-2">Napisz do nas</span>
+              <a href="mailto:hi@lemuria.studio" class="md:text-3xl hover:text-purple-400 transition-colors text-2xl font-light text-white font-poppins">hi@lemuria.studio</a>
             </div>
             <div class="flex flex-col">
-              <span class="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">Zadzwoń bezpośrednio</span>
-              <a href="tel:+48530236256" class="md:text-3xl hover:text-primary transition-colors text-2xl font-light text-white font-poppins">+48 530 236 256</a>
+              <span class="text-[10px] uppercase tracking-widest text-neutral-500 mb-2">Zadzwoń bezpośrednio</span>
+              <a href="tel:+48530236256" class="md:text-3xl hover:text-purple-400 transition-colors text-2xl font-light text-white font-poppins">+48 530 236 256</a>
             </div>
           </div>
         </div>
         <div class="border-gradient fluxora-card rounded-[32px] p-8 md:p-10">
           <form class="space-y-6">
             <div class="grid grid-cols-1 gap-6">
-              <input type="text" placeholder="Imię / Firma *" required class="w-full bg-secondary border border-input rounded-xl px-6 py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-ring transition-all">
-              <input type="email" placeholder="Email *" required class="w-full bg-secondary border border-input rounded-xl px-6 py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-ring transition-all">
-              <input type="tel" placeholder="Telefon (opcjonalnie)" class="w-full bg-secondary border border-input rounded-xl px-6 py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-ring transition-all">
-              <textarea placeholder="Wiadomość *" rows="4" required class="w-full bg-secondary border border-input rounded-xl px-6 py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-ring transition-all resize-none"></textarea>
+              <input type="text" placeholder="Imię / Firma *" required class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/30 transition-all">
+              <input type="email" placeholder="Email *" required class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/30 transition-all">
+              <input type="tel" placeholder="Telefon (opcjonalnie)" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/30 transition-all">
+              <textarea placeholder="Wiadomość *" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/30 transition-all resize-none"></textarea>
             </div>
-            <button type="button" class="group relative w-full overflow-hidden rounded-full bg-primary py-5 text-lg font-medium text-primary-foreground shadow-[0_0_20px_rgba(123,85,255,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(123,85,255,0.7)] active:scale-[0.98]">
+            <button type="button" class="group relative w-full overflow-hidden rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 py-5 text-lg font-medium text-white shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(147,51,234,0.7)] active:scale-[0.98]">
               <div class="absolute inset-0 -translate-x-[150%] skew-x-12 bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-[150%]"></div>
               <span class="relative z-10 flex items-center justify-center gap-2 text-shadow-sm">Wyślij wiadomość <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"></path></svg></span>
             </button>
@@ -533,32 +522,32 @@
   </section>
 
   <!-- ========== 12. FOOTER ========== -->
-  <footer class="py-16 border-t border-border bg-background">
+  <footer class="py-16 border-t border-white/5 bg-[#050505]">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
         <div class="md:col-span-4 space-y-6">
           <a href="https://lemuria.studio" class="block text-xl tracking-tighter text-white font-medium uppercase">Lemuria</a>
-          <div class="text-sm text-muted-foreground font-poppins space-y-1">
+          <div class="text-sm text-neutral-500 font-poppins space-y-1">
             <p class="text-white font-medium">Lemuria sp. z o.o.</p>
             <p>NIP: 5252930296</p>
             <p>REGON: 523582477</p>
           </div>
         </div>
         <div class="md:col-span-5">
-          <p class="text-sm text-muted-foreground font-poppins font-light leading-relaxed">Świadczymy usługi produkcji filmów reklamowych, animacji i wideo marketingowego z wykorzystaniem generatywnej sztucznej inteligencji.</p>
+          <p class="text-sm text-neutral-400 font-poppins font-light leading-relaxed">Świadczymy usługi produkcji filmów reklamowych, animacji i wideo marketingowego z wykorzystaniem generatywnej sztucznej inteligencji.</p>
         </div>
         <div class="md:col-span-3 md:text-right">
           <ul class="space-y-3 text-sm font-poppins">
-            <li><a href="#kim-jestesmy" class="text-muted-foreground hover:text-white transition-colors">O nas</a></li>
-            <li><a href="#uslugi" class="text-muted-foreground hover:text-white transition-colors">Usługi</a></li>
-            <li><a href="#portfolio" class="text-muted-foreground hover:text-white transition-colors">Portfolio</a></li>
-            <li><a href="#proces" class="text-muted-foreground hover:text-white transition-colors">Proces</a></li>
-            <li><a href="#faq" class="text-muted-foreground hover:text-white transition-colors">FAQ</a></li>
-            <li><a href="#contact" class="text-muted-foreground hover:text-white transition-colors">Kontakt</a></li>
+            <li><a href="#kim-jestesmy" class="text-neutral-500 hover:text-white transition-colors">O nas</a></li>
+            <li><a href="#uslugi" class="text-neutral-500 hover:text-white transition-colors">Usługi</a></li>
+            <li><a href="#portfolio" class="text-neutral-500 hover:text-white transition-colors">Portfolio</a></li>
+            <li><a href="#proces" class="text-neutral-500 hover:text-white transition-colors">Proces</a></li>
+            <li><a href="#faq" class="text-neutral-500 hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="#contact" class="text-neutral-500 hover:text-white transition-colors">Kontakt</a></li>
           </ul>
         </div>
       </div>
-      <div class="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-neutral-600 font-poppins">
+      <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-neutral-600 font-poppins">
         <div class="flex gap-6">
           <span>&copy; 2026 Lemuria Content House. Wszelkie prawa zastrzeżone.</span>
         </div>
@@ -573,11 +562,11 @@
 
   <!-- ========== 13. VIDEO MODAL ========== -->
   <div id="video-modal" class="fixed z-[100] flex transition-opacity duration-300 bg-black/60 opacity-0 top-0 right-0 bottom-0 left-0 backdrop-blur-lg items-center justify-center hidden" aria-hidden="true">
-    <button id="close-modal-btn" type="button" class="absolute top-6 right-6 z-[110] p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-ring/50" aria-label="Zamknij">
+    <button id="close-modal-btn" type="button" class="absolute top-6 right-6 z-[110] p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/50" aria-label="Zamknij">
       <iconify-icon icon="solar:close-circle-linear" width="32"></iconify-icon>
     </button>
     <div class="relative w-full max-w-7xl px-4 md:px-8">
-      <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-input">
+      <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-white/10">
         <iframe id="video-iframe" class="absolute inset-0 w-full h-full" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Odtwarzacz wideo"></iframe>
       </div>
     </div>
