@@ -113,3 +113,26 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   document.querySelectorAll('.scroll-item').forEach((el) => observer.observe(el));
 });
+
+function openVideo(url) {
+  const modal = document.getElementById('video-modal');
+  const iframe = document.getElementById('video-iframe');
+  
+  iframe.src = url;
+  modal.classList.remove('hidden');
+  setTimeout(() => modal.classList.add('opacity-100'), 10);
+  document.body.style.overflow = 'hidden'; // Blokada scrolla
+}
+
+// Obsługa zamykania (dodaj to do istniejącego kodu zamykania)
+document.getElementById('close-modal-btn').addEventListener('click', () => {
+  const modal = document.getElementById('video-modal');
+  const iframe = document.getElementById('video-iframe');
+  
+  modal.classList.remove('opacity-100');
+  setTimeout(() => {
+    modal.classList.add('hidden');
+    iframe.src = ''; // Stop video
+  }, 300);
+  document.body.style.overflow = '';
+});
