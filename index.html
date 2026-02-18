@@ -633,11 +633,13 @@
 
           <div class="flex items-start gap-3 px-2">
             <div class="flex items-center h-5">
-              <input id="rodo-main" name="rodo" type="checkbox" required 
+              <input id="rodo-main" name="rodo" type="checkbox" required 
                 class="w-4 h-4 rounded border-white/10 bg-white/5 text-purple-600 focus:ring-purple-500/50 accent-purple-600 cursor-pointer">
             </div>
             <label for="rodo-main" class="text-[10px] text-neutral-500 font-poppins leading-tight cursor-pointer">
-              Akceptuję <a href="https://lemuria.studio/polityka-prywatnosci" class="text-neutral-300 underline hover:text-purple-400">politykę prywatności</a>. Wyrażam zgodę na przetwarzanie moich danych w celu obsługi zapytania.
+              Wyrażam zgodę na przetwarzanie danych przez Lemuria sp. z o.o. w celu obsługi zapytania. 
+              Wiem, że mogę wycofać zgodę w każdej chwili. Pełne informacje o RODO znajdziesz w 
+              <a href="https://lemuria.studio/polityka-prywatnosci" class="text-neutral-300 underline hover:text-purple-400">polityce prywatności</a>.
             </label>
           </div>
 
@@ -1037,5 +1039,55 @@
   </script>
 
  <script src="js/main.js?v=3.0"></script>
+
+ <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 z-[200] transform translate-y-[150%] transition-transform duration-700 md:left-auto md:max-w-md">
+  <div class="border-gradient fluxora-card rounded-[24px] p-6 bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 shadow-2xl">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center shrink-0 border border-purple-500/20">
+        <iconify-icon icon="solar:cookie-linear" class="text-purple-400" width="24"></iconify-icon>
+      </div>
+      <div>
+        <h4 class="text-white font-poppins font-medium mb-1">Prywatność i Ciasteczka</h4>
+        <p class="text-neutral-400 text-xs font-poppins font-light leading-relaxed mb-4">
+          Używamy ciasteczek, aby analizować ruch i optymalizować Twoje doświadczenie z Lemurią. Szczegóły znajdziesz w naszej 
+          <a href="https://lemuria.studio/polityka-prywatnosci" class="text-white underline hover:text-purple-400 transition-colors">Polityce Prywatności</a>.
+        </p>
+        <div class="flex gap-3">
+          <button id="accept-cookies" class="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-medium py-2.5 rounded-full hover:scale-[1.02] transition-all active:scale-[0.98]">
+            Akceptuję wszystkie
+          </button>
+          <button id="decline-cookies" class="flex-1 bg-white/5 text-neutral-400 text-xs font-medium py-2.5 rounded-full border border-white/10 hover:bg-white/10 hover:text-white transition-all">
+            Tylko niezbędne
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+
+    // Sprawdź czy użytkownik już dokonał wyboru
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(() => {
+        banner.classList.remove('translate-y-[150%]');
+      }, 2000);
+    }
+
+    const closeBanner = (choice) => {
+      localStorage.setItem('cookieConsent', choice);
+      banner.classList.add('translate-y-[200%]');
+      setTimeout(() => banner.remove(), 1000);
+    };
+
+    acceptBtn.addEventListener('click', () => closeBanner('all'));
+    declineBtn.addEventListener('click', () => closeBanner('essential'));
+  });
+</script>
+
 </body>
 </html>
