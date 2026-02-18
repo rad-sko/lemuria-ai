@@ -71,3 +71,37 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) window.closeVideo(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) window.closeVideo(); });
 });
+
+// 4. MOBILE SCROLL FOCUS EFFECT
+document.addEventListener('DOMContentLoaded', () => {
+  // Sprawdzamy czy urządzenie obsługuje myszkę (hover).
+  // Jeśli nie (czyli telefon/tablet), uruchamiamy logikę scrolla.
+  const isHoverable = window.matchMedia('(hover: hover)').matches;
+
+  if (!isHoverable) {
+    const observerOptions = {
+      root: null,
+      // Marginesy ucinają górne i dolne 25% ekranu.
+      // Strefa aktywna to środkowe 50% ekranu.
+      rootMargin: '-25% 0px -25% 0px', 
+      threshold: 0
+    };
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Karta jest na środku -> aktywuj efekty (ramka, tytuł, ikona)
+          entry.target.classList.add('mobile-active');
+        } else {
+          // Karta wyjeżdża -> dezaktywuj
+          entry.target.classList.remove('mobile-active');
+        }
+      });
+    }, observerOptions);
+
+    // Obserwujemy wszystkie karty
+    document.querySelectorAll('.fluxora-card').forEach((card) => {
+      scrollObserver.observe(card);
+    });
+  }
+});

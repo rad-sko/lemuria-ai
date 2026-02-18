@@ -75,175 +75,148 @@ body {
 .animate-on-scroll { animation-play-state: paused !important; }
 .animate-on-scroll.animate { animation-play-state: running !important; }
 
-
-/* ========== FLUXORA CARD: FIXED SEAMLESS LOOP ========== */
+/* ========== FLUXORA CARD: FINAL UNIFIED (Safari, Mobile, Web Fixes) ========== */
 
 .fluxora-card {
   position: relative;
+  /* Tło karty */
   background: rgba(255, 255, 255, 0.02);
+  
+  /* Rozmycie tła - kluczowe dla efektu szkła */
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
   border-radius: 24px;
   z-index: 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Płynne animacje */
+  transition: transform 0.6s cubic-bezier(0.2, 0.65, 0.3, 0.9), box-shadow 0.6s ease;
+  
+  /* Fixy renderowania dla Safari */
+  isolation: isolate;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
-/* 1. Statyczna ramka (Spoczynek - szara) */
+/* 1. Statyczna ramka (Szara) - Zwykły border (100% stabilności na Safari) */
 .fluxora-card::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 24px;
-  padding: 1px;
   
-  /* Kolor ramki w spoczynku */
-  background: rgba(255, 255, 255, 0.1);
-  
-  /* Maskowanie środka */
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  /* Zamiast maski używamy zwykłego obramowania */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
   opacity: 1; /* Domyślnie widoczna */
 }
 
-/* 2. Animowana ramka (Hover - Kolorowa) */
+/* 2. Animowana ramka (Gradientowa) - Maska Destination-Out */
 .fluxora-card::before {
   content: "";
   position: absolute;
-  inset: -1px; /* Ramka minimalnie szersza */
+  inset: -1px; /* Minimalnie szersza, żeby przykryć szarą */
   border-radius: 24px;
-  padding: 2px; /* Grubość świecącej ramki */
+  padding: 2px;
   
-  /* DOUBLE SEQUENCE: Fiolet -> Róż -> Indygo | Fiolet -> Róż -> Indygo */
-  /* Dzięki temu koniec gradientu idealnie łączy się z początkiem przy przesuwaniu */
-  background: linear-gradient(90deg, 
-    #7c3aed, #db2777, #4f46e5, 
-    #7c3aed, #db2777, #4f46e5
-  );
-  
-  /* Rozmiar 200% szerokości kontenera */
+  background: linear-gradient(90deg, #7c3aed, #db2777, #4f46e5, #7c3aed, #db2777, #4f46e5);
   background-size: 200% 100%;
   
-  /* Maskowanie środka */
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
+  /* Maska wycina środek (padding-box) zostawiając tylko ramkę */
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) padding-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) padding-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   
   opacity: 0; /* Domyślnie ukryta */
-  transition: opacity 0.3s ease;
-  
-  /* Animacja przesuwania */
+  transition: opacity 0.5s ease;
   animation: shimmy 3s linear infinite;
+  
+  pointer-events: none;
 }
 
-/* 3. Interakcja HOVER */
-.fluxora-card:hover {
-  transform: translateY(-2px);
-  /* Mocny Glow w kolorze fioletowym */
-  box-shadow: 0 0 50px -10px rgba(124, 58, 237, 0.5);
-}
-
-.fluxora-card:hover::before {
-  opacity: 1; /* Pokaż kolorową ramkę */
-}
-
-.fluxora-card:hover::after {
-  opacity: 0; /* Ukryj szarą ramkę */
-}
-
-/* Idealna pętla przy background-size: 200% */
-@keyframes shimmy {
-  0% { background-position: 0% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* Word reveal */
-@keyframes wordBlurIn {
-  0% { opacity: 0; filter: blur(12px); transform: translateY(8px); }
-  100% { opacity: 1; filter: blur(0); transform: translateY(0); }
-}
-
-.word-reveal span {
-  opacity: 0;
-  display: inline-block;
-  will-change: transform, opacity, filter;
-}
-
-.word-reveal.animate span {
-  animation: wordBlurIn 0.8s cubic-bezier(0.2, 0.65, 0.3, 0.9) forwards;
-}
-
-/* Ticker */
-@keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.ticker-track {
-  animation: ticker 40s linear infinite;
-  width: max-content;
-}
-
-.ticker-track:hover {
-  animation-play-state: paused;
-}
-
-/* Subtelny, filmowy cień */
-.hero-glow {
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
-}
-
-.soft-glow {
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
-}
-
-/* ========== CAPABILITIES FIXES ========== */
-/* ========== CAPABILITIES & PORTFOLIO FIXES (Safari Ready) ========== */
-
-.fluxora-card {
-  transition: transform 0.5s cubic-bezier(0.2, 0.65, 0.3, 0.9), box-shadow 0.5s ease;
-  isolation: isolate; /* Fix dla Safari: zapobiega błędom renderowania masek */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.fluxora-card:hover {
-  transform: scale(1.03) translateY(-5px);
-}
-
-/* Poprawka ramek pod Safari - dodano translateZ(0) */
-.fluxora-card::before, .fluxora-card::after {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: opacity, background-position;
-}
-
-/* Naprawa mrugającego tytułu */
+/* --- LOGIKA TYTUŁU (NAPRAWA ZNIKANIA) --- */
 .card-title-transition {
+  /* Kolor startowy (biały) przykrywa gradient */
+  color: #ffffff;
+  
+  /* Animujemy tylko kolor (odsłanianie gradientu) */
   transition: color 0.4s ease;
+  
+  /* Gradient jest zdefiniowany ZAWSZE pod spodem */
+  background-image: linear-gradient(90deg, #7c3aed, #db2777, #4f46e5, #7c3aed);
   background-size: 200% auto;
+  
   background-clip: text;
   -webkit-background-clip: text;
-  display: inline-block; /* Stabilizuje tekst w Safari */
+  
+  display: inline-block;
+  
+  /* Fix dla Safari: wymusza kolor wypełnienia */
+  -webkit-text-fill-color: currentColor;
 }
 
-.group:hover .card-title-transition {
-  color: transparent;
-  background-image: linear-gradient(90deg, #7c3aed, #db2777, #4f46e5);
-  animation: shimmy 3s linear infinite;
-}
-
-/* Ikony z bezpiecznym filtrem zamiast maski */
+/* --- LOGIKA IKONY --- */
 .icon-gradient {
   color: #7c3aed;
   display: inline-flex;
   transition: transform 0.4s ease;
-  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
-.group:hover .icon-gradient {
+/* --- AKTYWACJA EFEKTÓW (HOVER + MOBILE ACTIVE) --- */
+/* Te style aplikują się, gdy:
+   1. Najedziesz myszką (Desktop)
+   2. JS doda klasę .mobile-active (Telefon) */
+
+/* Karta */
+.fluxora-card:hover,
+.fluxora-card.mobile-active {
+  /* Skala i cień */
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 0 50px -10px rgba(124, 58, 237, 0.5);
+}
+
+/* Mobile może mieć nieco mniejszą skalę */
+.fluxora-card.mobile-active {
+  transform: scale(1.02); 
+}
+
+/* Ramki */
+.fluxora-card:hover::before,
+.fluxora-card.mobile-active::before {
+  opacity: 1; /* Pokaż kolorową */
+}
+
+.fluxora-card:hover::after,
+.fluxora-card.mobile-active::after {
+  opacity: 0; /* Ukryj szarą */
+}
+
+/* Tytuł - zmiana koloru na przezroczysty odsłania gradient */
+.group:hover .card-title-transition,
+.fluxora-card.mobile-active .card-title-transition {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shimmy 3s linear infinite;
+}
+
+/* Ikona - obrót i cień */
+.group:hover .icon-gradient,
+.fluxora-card.mobile-active .icon-gradient {
   transform: scale(1.1) rotate(5deg);
   filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.5));
+}
+
+/* Animacja pętli gradientu */
+@keyframes shimmy {
+  0% { background-position: 0% 0; }
+  100% { background-position: -200% 0; }
 }
