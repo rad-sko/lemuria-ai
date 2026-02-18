@@ -200,40 +200,50 @@ body {
 }
 
 /* ========== CAPABILITIES FIXES ========== */
+/* ========== CAPABILITIES & PORTFOLIO FIXES (Safari Ready) ========== */
 
-/* Płynne skalowanie kafelka */
 .fluxora-card {
   transition: transform 0.5s cubic-bezier(0.2, 0.65, 0.3, 0.9), box-shadow 0.5s ease;
+  isolation: isolate; /* Fix dla Safari: zapobiega błędom renderowania masek */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .fluxora-card:hover {
   transform: scale(1.03) translateY(-5px);
 }
 
-/* Naprawa mrugającego tytułu (płynny transition koloru) */
+/* Poprawka ramek pod Safari - dodano translateZ(0) */
+.fluxora-card::before, .fluxora-card::after {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: opacity, background-position;
+}
+
+/* Naprawa mrugającego tytułu */
 .card-title-transition {
   transition: color 0.4s ease;
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
+  display: inline-block; /* Stabilizuje tekst w Safari */
 }
 
-/* Gdy najeżdżasz na grupę (kafelek), tytuł dostaje kolor */
 .group:hover .card-title-transition {
   color: transparent;
   background-image: linear-gradient(90deg, #7c3aed, #db2777, #4f46e5);
   animation: shimmy 3s linear infinite;
 }
 
-/* Naprawa ikon - czysty gradient bez kwadratów */
+/* Ikony z bezpiecznym filtrem zamiast maski */
 .icon-gradient {
-  color: #7c3aed; /* Fallback */
+  color: #7c3aed;
   display: inline-flex;
   transition: transform 0.4s ease;
+  -webkit-transform: translateZ(0);
 }
 
 .group:hover .icon-gradient {
   transform: scale(1.1) rotate(5deg);
-  /* Używamy filtru, żeby nie psuć renderowania maską */
   filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.5));
 }
