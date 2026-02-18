@@ -578,14 +578,25 @@
   </section>
 
  <!-- ========== 11. KONTAKT ========== -->
+
  <section class="overflow-hidden pt-32 pb-32 relative" id="contact">
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[120px] pointer-events-none"></div>
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      
       <div class="text-left">
-        <h2 class="md:text-5xl text-3xl font-medium text-white tracking-tight font-poppins mb-8">Zacznijmy<br><span class="text-neutral-500">wspólną historię.</span></h2>
-        <p class="text-base md:text-lg font-light text-neutral-400 font-poppins mb-12">Opowiedz nam o swoim projekcie. Odpowiemy w ciągu 24 godzin z propozycją działania.</p>
-        <div class="space-y-8">
+        <span class="fade-in-up block text-xs font-bold uppercase tracking-[0.35em] text-purple-400 mb-6 drop-shadow-[0_0_10px_rgba(168,85,247,0.4)]">
+          Kontakt
+        </span>
+        <h2 class="md:text-6xl text-4xl font-semibold text-white tracking-tight font-poppins mb-8 leading-[1.1]">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-primary to-indigo-400">Zacznijmy</span><br>
+          wspólną historię.
+        </h2>
+        <p class="text-base md:text-lg font-light text-neutral-400 font-poppins mb-12 max-w-md">
+          Masz projekt, który wymaga filmowego oka i nowoczesnych narzędzi? Porozmawiajmy o konkretach.
+        </p>
+        
+        <div class="space-y-10">
           <div class="flex flex-col">
             <span class="text-[10px] uppercase tracking-widest text-neutral-500 mb-2">Napisz do nas</span>
             <a href="mailto:office@lemuria.studio" class="md:text-3xl hover:text-purple-400 transition-colors text-2xl font-light text-white font-poppins">office@lemuria.studio</a>
@@ -596,20 +607,32 @@
           </div>
         </div>
       </div>
+
       <div class="border-gradient fluxora-card rounded-[32px] p-8 md:p-10">
         <form class="space-y-6">
           <div class="grid grid-cols-1 gap-6">
-            <input type="text" placeholder="Imię / Firma *" required class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/30 transition-all">
-            <input type="email" placeholder="Email *" required class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/30 transition-all">
-            <input type="tel" placeholder="Telefon (opcjonalnie)" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/30 transition-all">
-            <textarea placeholder="Wiadomość *" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-white/30 transition-all resize-none"></textarea>
+            <input type="text" placeholder="Imię / Firma" required 
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-purple-500/50 transition-all placeholder:text-neutral-500 font-light">
+            
+            <input type="text" placeholder="E-mail / telefon" required 
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-purple-500/50 transition-all placeholder:text-neutral-500 font-light">
+            
+            <textarea placeholder="Opis" rows="4" required 
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-purple-500/50 transition-all resize-none placeholder:text-neutral-500 font-light"></textarea>
           </div>
-          <button type="button" class="group relative w-full overflow-hidden rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 py-5 text-lg font-medium text-white shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(147,51,234,0.7)] active:scale-[0.98]">
+
+          <button type="submit" class="group relative w-full overflow-hidden rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 py-5 text-lg font-medium text-white shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(147,51,234,0.7)] active:scale-[0.98]">
             <div class="absolute inset-0 -translate-x-[150%] skew-x-12 bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-[150%]"></div>
-            <span class="relative z-10 flex items-center justify-center gap-2 text-shadow-sm">Wyślij wiadomość <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"></path></svg></span>
+            <span class="relative z-10 flex items-center justify-center gap-2 text-shadow-sm">
+              Wyślij wiadomość 
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"></path>
+              </svg>
+            </span>
           </button>
         </form>
       </div>
+
     </div>
   </div>
 </section>
@@ -619,91 +642,184 @@
   <section class="py-24 md:py-32 border-b border-white/5 bg-[#050505] relative" id="faq">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        
         <div class="lg:col-span-5">
           <div class="lg:sticky lg:top-32">
-            <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight font-poppins mb-6">Najczęściej zadawane pytania</h2>
-            <p class="text-base md:text-lg text-neutral-400 font-poppins font-light mb-8 max-w-sm">Odpowiedzi na pytania dotyczące produkcji wideo wspieranej przez AI.</p>
-            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-neutral-300 transition-colors">Masz inne pytanie? <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></a>
+            <span class="fade-in-up block text-xs font-bold uppercase tracking-[0.35em] text-purple-400 mb-6 drop-shadow-[0_0_10px_rgba(168,85,247,0.4)]">
+              FAQ
+            </span>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tighter font-poppins mb-6 leading-[1.1]">
+              Najczęściej <br>zadawane <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-primary to-indigo-400">pytania.</span>
+            </h2>
+            <p class="text-base md:text-lg text-neutral-400 font-poppins font-light mb-8 max-w-sm">
+              Odpowiedzi na pytania dotyczące produkcji wideo wspieranej przez AI.
+            </p>
+            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-neutral-300 transition-colors">
+              Masz inne pytanie? <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+            </a>
           </div>
         </div>
+  
         <div class="lg:col-span-7 divide-y divide-white/10">
+          
           <details class="group py-6 first:pt-0">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="group-hover:text-neutral-200 transition-colors text-lg md:text-xl font-medium text-white font-poppins pr-8">Czy produkcja filmowa z AI sprawdzi się w każdej kampanii?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Czy produkcja filmowa z AI sprawdzi się w każdej kampanii?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p>Nie. W Lemurii zawsze weryfikujemy, czy generatywna produkcja ma realny sens dla celu kampanii i formatu dystrybucji. Jeżeli klasyczna produkcja będzie lepszym rozwiązaniem – rekomendujemy inne podejście.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base">
+              <p>Nie. W Lemurii zawsze weryfikujemy, czy generatywna produkcja ma realny sens dla celu kampanii i formatu dystrybucji. Jeżeli klasyczna produkcja będzie lepszym rozwiązaniem – rekomendujemy inne podejście.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Jak wygląda współpraca z agencją kreatywną przy produkcji AI?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Jak wygląda współpraca z agencją kreatywną przy produkcji AI?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p class="mb-4">Pracujemy w modelu produkcyjnym, znanym z klasycznych realizacji reklamowych:</p><ul class="list-disc list-inside space-y-1 mb-4 pl-2"><li>brief</li><li>koncept i scenariusz</li><li>storyboard</li><li>realizacja i iteracje</li><li>montaż i postprodukcja</li></ul><p>Możemy pracować zarówno bezpośrednio z klientem, jak i w ścisłej współpracy z zespołem kreatywnym agencji. Mamy duże doświadczenie w pracy zarówno z światowymi markami jaki i małymi zespołami.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base">
+              <p class="mb-4">Pracujemy w modelu produkcyjnym, znanym z klasycznych realizacji reklamowych:</p>
+              <ul class="list-disc list-inside space-y-1 mb-4 pl-2">
+                <li>brief</li><li>koncept i scenariusz</li><li>storyboard</li><li>realizacja i iteracje</li><li>montaż i postprodukcja</li>
+              </ul>
+              <p>Możemy pracować zarówno bezpośrednio z klientem, jak i w ścisłej współpracy z zespołem kreatywnym agencji.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy realizujecie projekty white-label dla agencji?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Czy realizujecie projekty white-label dla agencji?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p>Tak. Realizujemy projekty produkcyjne dla agencji w modelu white-label.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base">
+              <p>Tak. Realizujemy projekty produkcyjne dla agencji w modelu white-label, zachowując pełną poufność i standardy techniczne wymagane przez domy produkcyjne.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Ile trwa realizacja filmu reklamowego z wykorzystaniem AI?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Ile trwa realizacja filmu reklamowego z wykorzystaniem AI?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p>Czas realizacji zależy od skali projektu, ale w wielu przypadkach proces jest krótszy niż w klasycznej produkcji. Najczęściej są to od kilku dni do kilku tygodni – w zależności od zakresu.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base">
+              <p>Czas realizacji zależy od skali projektu, ale w wielu przypadkach proces jest krótszy niż w klasycznej produkcji. Najczęściej są to od kilku dni do kilku tygodni.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czym różni się Wasza produkcja AI od „filmów generowanych z promptów"?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Czym różni się Wasza produkcja AI od „filmów generowanych z promptów"?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Pracujemy w standardowym procesie produkcyjnym: na koncepcie, scenariuszu i storyboardzie. AI jest u nas narzędziem realizacyjnym, a nie źródłem pomysłu. Każdy projekt prowadzony jest reżysersko – z kontrolą nad narracją, rytmem, kompozycją ujęć i estetyką marki.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4">
+              <p>AI jest u nas narzędziem realizacyjnym, a nie źródłem pomysłu. Każdy projekt prowadzony jest reżysersko – z kontrolą nad narracją, kompozycją ujęć i estetyką marki, a nie poleganiem na losowości algorytmu.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy możliwe są poprawki i iteracje w trakcie produkcji?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Czy możliwe są poprawki i iteracje w trakcie produkcji?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak. Jedną z głównych zalet generatywnej produkcji jest możliwość szybkiego wprowadzania zmian i testowania wariantów ujęć, scen oraz stylu wizualnego – bez konieczności powtarzania całego procesu zdjęciowego.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4">
+              <p>Tak. Jedną z głównych zalet generatywnej produkcji jest możliwość szybkiego wprowadzania zmian i testowania wariantów ujęć bez konieczności powtarzania całego procesu zdjęciowego.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy jesteście w stanie zachować spójność wizualną z identyfikacją marki?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Czy jesteście w stanie zachować spójność wizualną z identyfikacją marki?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak. Spójność stylistyczna, tonalna i narracyjna projektu jest jednym z kluczowych elementów procesu. Pracujemy na referencjach, brand bookach oraz wcześniej zdefiniowanym stylu wizualnym, prowadząc proces generatywny reżysersko i kuratorsko.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4">
+              <p>Tak. Pracujemy na referencjach, brand bookach oraz wcześniej zdefiniowanym stylu wizualnym, prowadząc proces generatywny reżysersko i kuratorsko.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy wykorzystanie AI jest bezpieczne dla komunikacji marki?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Czy wykorzystanie AI jest bezpieczne dla komunikacji marki?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak – pod warunkiem odpowiedniego procesu. W Lemurii każdy projekt przechodzi standardową kontrolę kreatywną i produkcyjną. AI nie generuje finalnego materiału bez selekcji, kuracji i odpowiedzialności reżyserskiej.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4">
+              <p>Tak. W Lemurii każdy projekt przechodzi standardową kontrolę kreatywną i produkcyjną. AI nie generuje finalnego materiału bez selekcji i odpowiedzialności reżyserskiej.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy realizujecie projekty wymagające NDA i poufności?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Czy realizujecie projekty wymagające NDA i poufności?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base"><p>Tak. Regularnie pracujemy przy projektach objętych umowami NDA – zarówno dla marek, jak i agencji.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base">
+              <p>Tak. Regularnie pracujemy przy projektach objętych umowami NDA – zarówno dla światowych marek, jak i czołowych agencji.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy produkcja z wykorzystaniem AI jest tańsza od klasycznej produkcji filmowej?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Czy produkcja z AI jest tańsza od klasycznej produkcji?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>W wielu przypadkach – tak. Ostateczny budżet zależy jednak od skali projektu, liczby scen i zakresu postprodukcji.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4">
+              <p>W wielu przypadkach – tak. Eliminujemy ogromne koszty logistyki i wynajmu lokacji, co pozwala przenieść budżet na jakość wizualną materiału.</p>
+            </div>
           </details>
+  
           <details class="group py-6">
             <summary class="flex justify-between items-start cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-lg md:text-xl font-medium text-white font-poppins pr-8 group-hover:text-neutral-200 transition-colors">Czy realizujecie projekty hybrydowe (AI + klasyczne zdjęcia / animacja)?</h3>
-              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0"><iconify-icon icon="solar:add-linear" width="24"></iconify-icon></span>
+              <h3 class="faq-question transition-all duration-300 text-lg md:text-xl font-medium text-white font-poppins pr-8 group-open:bg-clip-text group-open:text-transparent group-open:bg-gradient-to-r group-open:from-purple-400 group-open:to-indigo-400">
+                Czy realizujecie projekty hybrydowe?
+              </h3>
+              <span class="text-white/50 group-open:rotate-45 transition-transform duration-300 mt-1 shrink-0">
+                <iconify-icon icon="solar:add-linear" width="24"></iconify-icon>
+              </span>
             </summary>
-            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4"><p>Tak. Specjalizujemy się również w produkcjach hybrydowych, łączących generatywną AI z klasyczną animacją, materiałem filmowym oraz motion designem.</p></div>
+            <div class="mt-4 text-neutral-400 font-light font-poppins leading-relaxed text-base space-y-4">
+              <p>Tak. Specjalizujemy się w łączeniu generatywnej AI z klasyczną animacją, materiałem filmowym oraz profesjonalnym motion designem 2D/3D.</p>
+            </div>
           </details>
+  
         </div>
       </div>
     </div>
