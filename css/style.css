@@ -206,3 +206,28 @@ body {
   0% { background-position: 0% 0; }
   100% { background-position: -200% 0; }
 }
+/* ========== LOGO TICKER (NAPRAWA) ========== */
+
+.ticker-track {
+  display: flex;
+  gap: 4rem; /* Odpowiada gap-16 z Tailwind */
+  width: max-content; /* Kluczowe: sprawia, że pasek jest szerszy niż ekran */
+  animation: ticker-scroll 40s linear infinite; /* Czas trwania pętli */
+}
+
+/* Opcjonalnie: Zatrzymaj przewijanie po najechaniu myszką */
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* Definicja ruchu */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Przesuwamy o 50% w lewo, bo w HTML mamy dwa identyczne zestawy logotypów.
+       Gdy dojedzie do połowy, przeskakuje płynnie na początek. */
+    transform: translateX(-50%);
+  }
+}
