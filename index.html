@@ -26,6 +26,7 @@
     }
   </script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body class="antialiased overflow-x-hidden relative">
   <div class="grain-overlay" aria-hidden="true"></div>
@@ -372,7 +373,7 @@
 
    <section class="py-24 border-b border-white/5 bg-[#050505] relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-purple-900/10 rounded-full blur-[80px] pointer-events-none"></div>
-
+  
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="fluxora-card rounded-[32px] p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-10 group">
         
@@ -384,26 +385,31 @@
             Zostaw namiar i <span class="text-white font-medium">porozmawiajmy o realizacji</span> Twojej wizji.
           </p>
         </div>
-
-        <div class="w-full lg:w-auto">
-          <form class="flex flex-col sm:flex-row gap-4 shrink-0 mb-4">
+  
+        <div class="w-full lg:w-auto" id="quick-contact-content">
+          <form id="quick-contact-form" class="flex flex-col sm:flex-row gap-4 shrink-0 mb-4">
+            <input type="hidden" name="accessKey" value="sf_bf06il4engi3i6111kjmm14a">
+            <input type="hidden" name="subject" value="Quick Contact - Lemuria AI">
+            <input type="text" name="honeypot" style="display:none">
+  
             <div class="relative w-full sm:w-[300px]">
-               <input type="text" placeholder="E-mail lub telefon" class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white font-light placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all">
+               <input type="text" name="email" placeholder="E-mail lub telefon" required 
+                 class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white font-light placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all">
             </div>
             
-            <button type="button" class="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-400 via-primary to-indigo-400 py-4 px-8 text-white font-medium transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(124,58,237,0.3)]">
+            <button type="submit" class="group relative overflow-hidden rounded-full bg-gradient-to-r from-purple-400 via-primary to-indigo-400 py-4 px-8 text-white font-medium transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(124,58,237,0.3)]">
               <span class="relative z-10 whitespace-nowrap">Zostaw kontakt</span>
             </button>
           </form>
-
+  
           <div class="flex items-start gap-2 max-w-[420px]">
             <iconify-icon icon="solar:shield-check-linear" width="14" class="text-green-500 mt-0.5 shrink-0"></iconify-icon>
             <p class="text-[10px] text-neutral-500 font-poppins leading-tight italic">
-              Szanujemy Twoją prywatność. Użyjemy Twoich danych <span class="text-neutral-300">wyłącznie do kontaktu</span> w sprawie Twojego projektu. Zero spamu.
+              Szanujemy Twoją prywatność. Klikając przycisk, akceptujesz <a href="https://lemuria.studio/polityka-prywatnosci" class="text-neutral-300 underline">politykę prywatności</a>. Zero spamu.
             </p>
           </div>
         </div>
-
+  
       </div>
     </div>
   </section>
@@ -608,17 +614,31 @@
         </div>
       </div>
 
-      <div class="border-gradient fluxora-card rounded-[32px] p-8 md:p-10">
-        <form class="space-y-6">
+      <div class="border-gradient fluxora-card rounded-[32px] p-8 md:p-10" id="main-contact-content">
+        <form id="main-contact-form" class="space-y-6">
+          <input type="hidden" name="accessKey" value="sf_bf06il4engi3i6111kjmm14a">
+          <input type="hidden" name="subject" value="Nowe zapytanie - Lemuria AI">
+          <input type="text" name="honeypot" style="display:none">
+
           <div class="grid grid-cols-1 gap-6">
-            <input type="text" placeholder="Imię / Firma" required 
+            <input type="text" name="name" placeholder="Imię / Firma" required 
               class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-purple-500/50 transition-all placeholder:text-neutral-500 font-light">
             
-            <input type="text" placeholder="E-mail / telefon" required 
+            <input type="text" name="email" placeholder="E-mail / telefon" required 
               class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-purple-500/50 transition-all placeholder:text-neutral-500 font-light">
             
-            <textarea placeholder="Opis" rows="4" required 
+            <textarea name="message" placeholder="Opis" rows="4" required 
               class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-purple-500/50 transition-all resize-none placeholder:text-neutral-500 font-light"></textarea>
+          </div>
+
+          <div class="flex items-start gap-3 px-2">
+            <div class="flex items-center h-5">
+              <input id="rodo-main" name="rodo" type="checkbox" required 
+                class="w-4 h-4 rounded border-white/10 bg-white/5 text-purple-600 focus:ring-purple-500/50 accent-purple-600 cursor-pointer">
+            </div>
+            <label for="rodo-main" class="text-[10px] text-neutral-500 font-poppins leading-tight cursor-pointer">
+              Akceptuję <a href="https://lemuria.studio/polityka-prywatnosci" class="text-neutral-300 underline hover:text-purple-400">politykę prywatności</a>. Wyrażam zgodę na przetwarzanie moich danych w celu obsługi zapytania.
+            </label>
           </div>
 
           <button type="submit" class="group relative w-full overflow-hidden rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 py-5 text-lg font-medium text-white shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(147,51,234,0.7)] active:scale-[0.98]">
@@ -911,6 +931,111 @@
 
     document.addEventListener('DOMContentLoaded', runCounters);
   </script>
+
+<script>
+  document.getElementById('quick-contact-form').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+  
+      const form = this;
+      const contentArea = document.getElementById('quick-contact-content');
+      const button = form.querySelector('button');
+      const originalBtnText = button.innerHTML;
+  
+      // Feedback: przycisk w stan ładowania
+      button.disabled = true;
+      button.innerHTML = '<span class="relative z-10 whitespace-nowrap">Wysyłanie...</span>';
+  
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+  
+      fetch('https://api.staticforms.xyz/submit', {
+          method: 'POST',
+          body: JSON.stringify(object),
+          headers: { 'Content-Type': 'application/json' }
+      })
+      .then(response => {
+          if (response.ok) {
+              // Sukces! Podmieniamy całą prawą stronę boxa na podziękowanie
+              contentArea.innerHTML = `
+                  <div class="flex flex-col items-center lg:items-start space-y-2 opacity-0 transition-opacity duration-500" id="success-msg">
+                      <div class="flex items-center gap-3 text-white">
+                          <iconify-icon icon="solar:check-circle-bold" class="text-green-500" width="32"></iconify-icon>
+                          <span class="text-xl font-medium font-poppins text-white">Dziękujemy!</span>
+                      </div>
+                      <p class="text-neutral-400 font-light font-poppins text-sm text-center lg:text-left">
+                          Spodziewaj się odpowiedzi szybciej, niż myślisz.
+                      </p>
+                  </div>
+              `;
+              // Mały trick, żeby napis płynnie się pojawił
+              setTimeout(() => {
+                  document.getElementById('success-msg').classList.remove('opacity-0');
+              }, 10);
+          } else {
+              throw new Error();
+          }
+      })
+      .catch(error => {
+          alert("Błąd. Napisz bezpośrednio na office@lemuria.studio");
+          button.disabled = false;
+          button.innerHTML = originalBtnText;
+      });
+  });
+  </script>
+
+<script>
+  document.getElementById('main-contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+  
+      const form = this;
+      const contentArea = document.getElementById('main-contact-content');
+      const button = form.querySelector('button');
+      const originalBtnText = button.innerHTML;
+  
+      // Feedback: przycisk w stan ładowania
+      button.disabled = true;
+      button.innerHTML = '<span class="relative z-10 whitespace-nowrap">Wysyłanie...</span>';
+  
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+  
+      fetch('https://api.staticforms.xyz/submit', {
+          method: 'POST',
+          body: JSON.stringify(object),
+          headers: { 'Content-Type': 'application/json' }
+      })
+      .then(response => {
+          if (response.ok) {
+              // Sukces: Podmiana na komunikat z prośbą o tel w pilnych sprawach
+              contentArea.innerHTML = `
+                  <div class="flex flex-col items-center justify-center h-full py-12 text-center animate-fade-in" style="animation: fadeIn 0.5s forwards;">
+                      <div class="w-20 h-20 bg-purple-500/10 rounded-full flex items-center justify-center mb-6 border border-purple-500/20">
+                          <iconify-icon icon="solar:check-circle-bold" class="text-purple-400" width="48"></iconify-icon>
+                      </div>
+                      <h3 class="text-3xl font-medium text-white font-poppins mb-4">Dziękujemy!</h3>
+                      <p class="text-neutral-400 font-light font-poppins mb-8 max-w-sm leading-relaxed">
+                          Wiadomość dotarła. Odezwiemy się najszybciej jak to możliwe, by przeanalizować Twój projekt.
+                      </p>
+                      <div class="p-6 bg-white/5 rounded-2xl border border-white/10 w-full max-w-xs">
+                          <p class="text-[10px] uppercase tracking-widest text-purple-400 font-bold mb-2">Temat jest pilny?</p>
+                          <a href="tel:+48530236256" class="text-xl text-white font-poppins hover:text-purple-400 transition-colors tracking-tight">
+                              +48 530 236 256
+                          </a>
+                      </div>
+                  </div>
+              `;
+          } else {
+              throw new Error();
+          }
+      })
+      .catch(error => {
+          alert("Wystąpił błąd. Spróbuj ponownie lub napisz na office@lemuria.studio");
+          button.disabled = false;
+          button.innerHTML = originalBtnText;
+      });
+  });
+  </script>
+
  <script src="js/main.js?v=3.0"></script>
 </body>
 </html>

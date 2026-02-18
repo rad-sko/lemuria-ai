@@ -103,3 +103,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+<script>
+document.getElementById('quick-contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Blokujemy przeładowanie strony
+
+    const form = this;
+    const contentArea = document.getElementById('quick-contact-content');
+    const button = form.querySelector('button');
+    const originalContent = contentArea.innerHTML;
+
+    // Feedback wizualny
+    button.disabled = true;
+    button.querySelector('span').innerText = "Wysyłanie...";
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+
+    fetch('https://api.staticforms.xyz/submit', {
+        method: 'POST',
+        body: JSON.stringify(object),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Sukces: Podmieniamy formularz na komunikat
+            contentArea.innerHTML = `
+                <div class="flex flex-col items-center lg:items-start animate-fade-in">
+                    <div class="flex items-center gap-3 text-white mb-2">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-green-500" width="32"></iconify-icon>
+                        <span class="text-xl font-medium font-poppins">Dziękujemy!</span>
+                    </div>
+                    <p class="text-neutral-400 font-light font-poppins text-sm text-center lg:text-left">
+                        Otrzymaliśmy Twój namiar. Wrócimy do Ciebie wkrótce.
+                    </p>
+                </div>
+            `;
+        } else {
+            throw new Error();
+        }
+    })
+    .catch(error => {
+        alert("Wystąpił błąd. Spróbuj ponownie lub napisz na office@lemuria.studio");
+        button.disabled = false;
+        button.querySelector('span').innerText = "Zostaw kontakt";
+    });
+});
+</script>
