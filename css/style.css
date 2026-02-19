@@ -97,6 +97,8 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
+  cursor: pointer; 
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* 1. Statyczna ramka (Szara) - ZWYKŁY BORDER (To zawsze działa i jest cieniutkie) */
@@ -233,34 +235,3 @@ body {
   }
 }
 
-// 4. MOBILE SCROLL FOCUS EFFECT
-document.addEventListener('DOMContentLoaded', () => {
-  // Sprawdzamy czy urządzenie obsługuje myszkę (hover).
-  const isHoverable = window.matchMedia('(hover: hover)').matches;
-
-  if (!isHoverable) {
-    const observerOptions = {
-      root: null,
-      // ZMIANA TUTAJ:
-      // -40% z góry i z dołu oznacza, że efekt działa TYLKO
-      // na wąskim pasku (20% wysokości ekranu) idealnie na środku.
-      // Jak tylko karta lekko wyjedzie, efekt zniknie.
-      rootMargin: '-40% 0px -40% 0px', 
-      threshold: 0
-    };
-
-    const scrollObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('mobile-active');
-        } else {
-          entry.target.classList.remove('mobile-active');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.fluxora-card').forEach((card) => {
-      scrollObserver.observe(card);
-    });
-  }
-});

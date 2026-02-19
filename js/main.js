@@ -74,16 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 4. MOBILE SCROLL FOCUS EFFECT
 document.addEventListener('DOMContentLoaded', () => {
-  // Sprawdzamy czy urządzenie obsługuje myszkę (hover).
-  const isHoverable = window.matchMedia('(hover: hover)').matches;
+  // ZMIANA: Niezawodna detekcja ekranów dotykowych (smartfony/tablety)
+  const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
-  if (!isHoverable) {
+  if (isTouchDevice) {
     const observerOptions = {
       root: null,
-      // ZMIANA TUTAJ:
-      // -40% z góry i z dołu oznacza, że efekt działa TYLKO
-      // na wąskim pasku (20% wysokości ekranu) idealnie na środku.
-      // Jak tylko karta lekko wyjedzie, efekt zniknie.
       rootMargin: '-40% 0px -40% 0px', 
       threshold: 0
     };
@@ -103,62 +99,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
-// --- NAPRAWA MOBILE FOCUS ---
-document.addEventListener('DOMContentLoaded', () => {
-  const isHoverable = window.matchMedia('(hover: hover)').matches;
-
-  if (!isHoverable) {
-    const mobileObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        // Zmniejszamy marginesy do 30%, aby łatwiej było "aktywować" kartę przewijając
-        if (entry.isIntersecting) {
-          entry.target.classList.add('mobile-active');
-        } else {
-          entry.target.classList.remove('mobile-active');
-        }
-      });
-    }, { rootMargin: '-30% 0px -30% 0px', threshold: 0.1 });
-
-    document.querySelectorAll('.fluxora-card').forEach((card) => {
-      mobileObserver.observe(card);
-    });
-  }
-});
-
-// --- NAPRAWA LICZNIKÓW (COUNTERS) ---
-const runCounters = () => {
-  const counters = document.querySelectorAll('.counter');
-  const speed = 100; // Szybkość animacji
-
-  const countObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const counter = entry.target;
-        const target = +counter.getAttribute('data-target');
-        
-        // Jeśli target to nieskończoność (symbol), nie animujemy numerycznie
-        if (isNaN(target)) return;
-
-        const updateCount = () => {
-          const count = +counter.innerText;
-          const inc = Math.ceil(target / speed);
-
-          if (count < target) {
-            counter.innerText = count + inc > target ? target : count + inc;
-            setTimeout(updateCount, 20);
-          } else {
-            counter.innerText = target;
-          }
-        };
-
-        updateCount();
-        countObserver.unobserve(counter);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(counter => countObserver.observe(counter));
-};
-
-document.addEventListener('DOMContentLoaded', runCounters);
