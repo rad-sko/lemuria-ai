@@ -104,49 +104,61 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-<script>
-document.getElementById('quick-contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Blokujemy przeładowanie strony
+// --- NAPRAWA MOBILE FOCUS ---
+document.addEventListener('DOMContentLoaded', () => {
+  const isHoverable = window.matchMedia('(hover: hover)').matches;
 
-    const form = this;
-    const contentArea = document.getElementById('quick-contact-content');
-    const button = form.querySelector('button');
-    const originalContent = contentArea.innerHTML;
-
-    // Feedback wizualny
-    button.disabled = true;
-    button.querySelector('span').innerText = "Wysyłanie...";
-
-    const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-
-    fetch('https://api.staticforms.xyz/submit', {
-        method: 'POST',
-        body: JSON.stringify(object),
-        headers: { 'Content-Type': 'application/json' }
-    })
-    .then(response => {
-        if (response.ok) {
-            // Sukces: Podmieniamy formularz na komunikat
-            contentArea.innerHTML = `
-                <div class="flex flex-col items-center lg:items-start animate-fade-in">
-                    <div class="flex items-center gap-3 text-white mb-2">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-green-500" width="32"></iconify-icon>
-                        <span class="text-xl font-medium font-poppins">Dziękujemy!</span>
-                    </div>
-                    <p class="text-neutral-400 font-light font-poppins text-sm text-center lg:text-left">
-                        Otrzymaliśmy Twój namiar. Wrócimy do Ciebie wkrótce.
-                    </p>
-                </div>
-            `;
+  if (!isHoverable) {
+    const mobileObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // Zmniejszamy marginesy do 30%, aby łatwiej było "aktywować" kartę przewijając
+        if (entry.isIntersecting) {
+          entry.target.classList.add('mobile-active');
         } else {
-            throw new Error();
+          entry.target.classList.remove('mobile-active');
         }
-    })
-    .catch(error => {
-        alert("Wystąpił błąd. Spróbuj ponownie lub napisz na office@lemuria.studio");
-        button.disabled = false;
-        button.querySelector('span').innerText = "Zostaw kontakt";
+      });
+    }, { rootMargin: '-30% 0px -30% 0px', threshold: 0.1 });
+
+    document.querySelectorAll('.fluxora-card').forEach((card) => {
+      mobileObserver.observe(card);
     });
+  }
 });
-</script>
+
+// --- NAPRAWA LICZNIKÓW (COUNTERS) ---
+const runCounters = () => {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 100; // Szybkość animacji
+
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = +counter.getAttribute('data-target');
+        
+        // Jeśli target to nieskończoność (symbol), nie animujemy numerycznie
+        if (isNaN(target)) return;
+
+        const updateCount = () => {
+          const count = +counter.innerText;
+          const inc = Math.ceil(target / speed);
+
+          if (count < target) {
+            counter.innerText = count + inc > target ? target : count + inc;
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCount();
+        countObserver.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => countObserver.observe(counter));
+};
+
+document.addEventListener('DOMContentLoaded', runCounters);
