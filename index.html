@@ -96,11 +96,11 @@
   </header>
   
   <!-- ========== 3. LICZBY ========== -->
-  <section class="py-16 md:py-24 bg-[#050505] border-white/5 border-b relative">
+  <section class="py-16 md:py-24 bg-[#050505] border-white/5 border-b relative" id="statystyki">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         
-        <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 flex flex-col items-center [animation:fadeSlideIn_0.4s_ease-out_0.05s_both] animate-on-scroll">
+        <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 flex flex-col items-center animate-on-scroll fade-in-up">
           <div class="h-20 md:h-28 flex items-center justify-center w-full">
             <div class="text-5xl md:text-7xl font-bold font-poppins bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400 whitespace-nowrap">
               <span class="counter" data-target="11">0</span><span>+</span>
@@ -109,7 +109,7 @@
           <p class="mt-6 text-xs uppercase tracking-[0.35em] text-neutral-400 font-poppins font-medium">Lat na rynku reklamowym</p>
         </div>
   
-        <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 flex flex-col items-center [animation:fadeSlideIn_0.4s_ease-out_0.1s_both] animate-on-scroll">
+        <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 flex flex-col items-center animate-on-scroll fade-in-up delay-100">
           <div class="h-20 md:h-28 flex items-center justify-center w-full">
             <div class="text-5xl md:text-7xl font-bold font-poppins bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400 whitespace-nowrap">
               <span class="counter" data-target="920">0</span><span>+</span>
@@ -118,7 +118,7 @@
           <p class="mt-6 text-xs uppercase tracking-[0.35em] text-neutral-400 font-poppins font-medium">Dostarczonych formatów</p>
         </div>
   
-        <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 flex flex-col items-center [animation:fadeSlideIn_0.4s_ease-out_0.15s_both] animate-on-scroll">
+        <div class="border-gradient fluxora-card rounded-[24px] p-8 md:p-10 flex flex-col items-center animate-on-scroll fade-in-up delay-200">
           <div class="h-20 md:h-28 flex items-center justify-center w-full">
             <div class="text-6xl md:text-8xl font-bold font-poppins bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400 whitespace-nowrap leading-none">
               &infin;
@@ -130,7 +130,6 @@
       </div>
     </div>
   </section>
-
   <!-- ========== 4. DOŚWIADCZENIE + LOGO TICKER ========== -->
   <section class="pt-24 pb-24">
     <div class="max-w-7xl mr-auto ml-auto pr-6 pl-6">
@@ -898,41 +897,6 @@
       </div>
     </div>
   </div>
-  <script>
-    // Skrypt animujący odliczanie liczb
-    const runCounters = () => {
-      const counters = document.querySelectorAll('.counter');
-      const speed = 200; // Im niższa liczba, tym szybciej lecą cyfry
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            const target = +counter.getAttribute('data-target');
-            
-            const updateCount = () => {
-              const count = +counter.innerText;
-              const inc = target / speed;
-
-              if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 15);
-              } else {
-                counter.innerText = target;
-              }
-            };
-
-            updateCount();
-            observer.unobserve(counter); // Animacja wykona się tylko raz
-          }
-        });
-      }, { threshold: 0.8 }); // Animacja ruszy, gdy 80% sekcji będzie widoczne
-
-      counters.forEach(counter => observer.observe(counter));
-    };
-
-    document.addEventListener('DOMContentLoaded', runCounters);
-  </script>
 
 <script>
   document.getElementById('quick-contact-form').addEventListener('submit', function(e) {
