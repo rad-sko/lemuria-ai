@@ -99,3 +99,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// 5. NUMBER COUNTERS (Odliczanie statystyk)
+const runCounters = () => {
+  const counters = document.querySelectorAll('.counter');
+  if (counters.length === 0) return; // Zabezpieczenie, jeśli nie jesteśmy na stronie z licznikami
+
+  const speed = 200; // Im niższa liczba, tym szybsza animacja
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = +counter.getAttribute('data-target');
+        
+        const updateCount = () => {
+          const count = +counter.innerText;
+          // Zapewniamy płynny przyrost, żeby zera nie przeskakiwały sztucznie
+          const inc = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            // Wywołujemy klatkę animacji
+            setTimeout(updateCount, 15);
+          } else {
+            // Zabezpieczenie, by na pewno wylądować na docelowej liczbie
+            counter.innerText = target;
+          }
+        };
+
+        updateCount();
+        observer.unobserve(counter); // Odpinamy obserwatora – animacja odpala się tylko raz
+      }
+    });
+  }, { 
+    // ZMIANA UX dla Mobile: threshold 0.5 (zamiast 0.8) 
+    // Animacja odpali się, gdy połowa karty wejdzie w ekran. Na małych ekranach teleofnów to znacznie pewniejsze.
+    threshold: 0.5 
+  }); 
+
+  counters.forEach(counter => observer.observe(counter));
+};
+
+document.addEventListener('DOMContentLoaded', runCounters);
